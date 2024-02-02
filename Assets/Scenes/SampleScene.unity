@@ -5071,7 +5071,7 @@ GameObject:
   - component: {fileID: 417819316}
   - component: {fileID: 417819319}
   m_Layer: 0
-  m_Name: demos
+  m_Name: deimos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5176,7 +5176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 697514154}
-  speed: 4
+  speed: 5
 --- !u!1001 &467950923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10442,7 +10442,7 @@ GameObject:
   - component: {fileID: 1203604263}
   - component: {fileID: 1203604266}
   m_Layer: 0
-  m_Name: phopos
+  m_Name: phobos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10457,9 +10457,15 @@ Transform:
   m_GameObject: {fileID: 1203604261}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+Updates
   m_LocalPosition: {x: 1.465, y: -0.312, z: 0}
   m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_ConstrainProportionsScale: 1
+
+  m_LocalPosition: {x: 1.5220001, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
+main
   m_Children: []
   m_Father: {fileID: 697514154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10547,7 +10553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 697514154}
-  speed: 3
+  speed: 4
 --- !u!1 &1419766507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10663,7 +10669,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+Updates
   m_LocalScale: {x: 1, y: 1, z: 1}
+
+  m_LocalScale: {x: 50, y: 50, z: 50}
+main
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1102881995}
