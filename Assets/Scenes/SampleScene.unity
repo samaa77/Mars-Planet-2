@@ -315,6 +315,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2094127362}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2094127364}
     - targetCorrespondingSourceObject: {fileID: 100002, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1313956587}
@@ -5400,6 +5403,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1483399935}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1483399937}
     - targetCorrespondingSourceObject: {fileID: 100002, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 578640966}
@@ -10894,6 +10900,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1483399937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553817034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5288757de1c022c4594c1fb2dc4f8ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 697514154}
+  speed: 0
 --- !u!1 &1676500577
 GameObject:
   m_ObjectHideFlags: 0
@@ -20779,6 +20799,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2094127364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094127361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5288757de1c022c4594c1fb2dc4f8ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 697514154}
+  speed: 0
 --- !u!4 &48765413754712711
 Transform:
   m_ObjectHideFlags: 0
@@ -21921,6 +21955,7 @@ GameObject:
   - component: {fileID: 1996525938}
   - component: {fileID: 919132148580435138}
   - component: {fileID: 919132148580435139}
+  - component: {fileID: 919132148580435140}
   m_Layer: 0
   m_Name: Mars 2020
   m_TagString: Untagged
@@ -21969,6 +22004,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &919132148580435140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148580435137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a2e5b1b241d624493589f951926e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityTarget: {fileID: 697514154}
+  intensity: 15000
+  torque: 500
+  gravity: 3.71
 --- !u!23 &921028512835843871
 MeshRenderer:
   m_ObjectHideFlags: 0
