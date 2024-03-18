@@ -20615,6 +20615,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1883752056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883752057}
+  m_Layer: 0
+  m_Name: North Pole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1883752057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883752056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3561, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1923624013
 GameObject:
   m_ObjectHideFlags: 0
@@ -20723,6 +20754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lander: {fileID: 919132148580435137}
   Mars: {fileID: 697514150}
+  North_Pole: {fileID: 1883752056}
   distance: 0
   i: 0
   T_int: 0
@@ -20735,7 +20767,6 @@ MonoBehaviour:
   Diameter: 0
   Frontal_Area: 0
   Weight_Force: 0
-  Acceleration: 0
   Q: 0
   S: 0
   M: 0
@@ -20746,11 +20777,14 @@ MonoBehaviour:
   y: 0
   g: 0
   Time1: 0
+  Gyro: 0
+  Magnetometer_Vector: {x: 0, y: 0, z: 0}
   Position_Vector: {x: 0, y: 0, z: 0}
   Velocity_Vector: {x: 0, y: 0, z: 0}
   Last_Velocity_Vector: {x: 0, y: 0, z: 0}
   Acceleration_Vector: {x: 0, y: 0, z: 0}
   Euler_Angles: {x: 0, y: 0, z: 0}
+  Angular_Velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &2094127361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
@@ -31568,3 +31602,4 @@ SceneRoots:
   - {fileID: 1842871392}
   - {fileID: 1102881995}
   - {fileID: 543450653108149883}
+  - {fileID: 1883752057}
