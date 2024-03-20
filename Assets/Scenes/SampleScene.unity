@@ -20786,7 +20786,9 @@ MonoBehaviour:
   Lander: {fileID: 919132148580435137}
   Mars: {fileID: 697514150}
   North_Pole: {fileID: 1883752056}
+  Landing_Site: {fileID: 188040967}
   distance: 0
+  Landing_Site_Distance: 0
   i: 0
   T_int: 0
   T_final: 0

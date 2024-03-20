@@ -9,9 +9,12 @@ public class Sensors : MonoBehaviour
     public GameObject Lander;
     public GameObject Mars;
     public GameObject North_Pole;
+    public GameObject Landing_Site;
 
     //"distance" is for distance between mars and the lander Which is measured by the altimeter sensor
     public double distance;
+
+    public float Landing_Site_Distance;
 
     //"i" is for iterations which is for calculating acceleration from calculating the average of the change rate of velocity vector in each frame  
     public float i = 0;
@@ -92,6 +95,7 @@ public class Sensors : MonoBehaviour
 
         //Altimeter Sensor
         distance = Vector3.Distance(Lander.transform.position, Mars.transform.position);
+        Landing_Site_Distance = Vector3.Distance(Lander.transform.position, Landing_Site.transform.position);
 
         //State Vector of the lander relative to mars
         Position_Vector = Lander.transform.position - Mars.transform.position;
