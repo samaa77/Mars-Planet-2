@@ -54,9 +54,9 @@ Material:
     - _BUILTIN_QueueOffset: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _atmosphere_size: 10
+    - _atmosphere_size: 5
     m_Colors:
-    - _Color: {r: 0.3207547, g: 0.08830298, b: 0.055678166, a: 0}
+    - _Color: {r: 0.9709587, g: 0.6635187, b: 0.1319038, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6995424018491327806
 MonoBehaviour:
