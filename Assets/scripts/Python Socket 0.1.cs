@@ -87,5 +87,5 @@ public class MyListener : MonoBehaviour
     {
         // Set this object's position in the scene according to the position received
         transform.position = position;
-    }
+    }
 }
