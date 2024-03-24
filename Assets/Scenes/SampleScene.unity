@@ -221,9 +221,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1483399934}
-    - targetCorrespondingSourceObject: {fileID: 400000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 246058223}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
       insertIndex: -1
@@ -231,9 +228,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 697514155}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 697514158}
   m_SourcePrefab: {fileID: 100100000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
 --- !u!1001 &65968088
 PrefabInstance:
@@ -390,10 +384,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5084.25, y: 5084.25, z: 5084.25}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 697514154}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &246058224
 ParticleSystemRenderer:
@@ -475,7 +469,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246058222}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 10
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -490,7 +484,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 10
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -550,7 +544,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 1000
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1098,12 +1092,12 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 13
+    type: 17
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
-    donutRadius: 0.2
+    radiusThickness: 0.5
+    donutRadius: 0.1
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -1185,7 +1179,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.8
       mode: 0
       spread: 0
       speed:
@@ -1356,8 +1350,8 @@ ParticleSystem:
         m_RotationOrder: 4
     rateOverDistance:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 1
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1365,15 +1359,15 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 0
+          inSlope: 1.0853795
+          outSlope: 1.0853795
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.23157892
         - serializedVersion: 3
           time: 1
-          value: 0
+          value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1742,8 +1736,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.83921576, b: 0.5882353, a: 1}
+        key1: {r: 1, g: 0.8235295, b: 0.5803922, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1767,7 +1761,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -10361,30 +10355,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 541dc450e82531b4b950cd204a82c77b, type: 3}
   m_PrefabInstance: {fileID: 12053863}
   m_PrefabAsset: {fileID: 0}
---- !u!205 &697514158
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697514150}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -10516,8 +10486,8 @@ Camera:
   m_GameObject: {fileID: 894667700}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10540,7 +10510,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 99999
-  field of view: 26.991467
+  field of view: 31
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -36485,3 +36455,4 @@ SceneRoots:
   - {fileID: 1883752057}
   - {fileID: 188040968}
   - {fileID: 12053863}
+  - {fileID: 246058223}
