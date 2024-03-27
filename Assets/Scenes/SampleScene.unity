@@ -5633,7 +5633,7 @@ GameObject:
   - component: {fileID: 768191474}
   - component: {fileID: 768191473}
   m_Layer: 0
-  m_Name: 'Atmosphere-Fog donut '
+  m_Name: Atmosphere  detailed layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5685,7 +5685,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 0.6
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -10729,7 +10729,7 @@ GameObject:
   - component: {fileID: 1095494731}
   - component: {fileID: 1095494730}
   m_Layer: 0
-  m_Name: Atmosphere-Fog 1
+  m_Name: Atmosphere outer layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
