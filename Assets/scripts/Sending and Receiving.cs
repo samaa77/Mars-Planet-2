@@ -165,6 +165,7 @@ public class CombinedSensorsAndThrusterControl : MonoBehaviour
 
         try
         {
+
             // Connect to the server
             client.Connect(sensorsServerHost, sensorsServerPort);
 
