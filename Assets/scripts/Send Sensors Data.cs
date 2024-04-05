@@ -125,7 +125,7 @@ public class Sensors_Data : MonoBehaviour
         distance = Vector3.Distance(Lander.transform.position, Mars.transform.position);
         Landing_Site_Distance = Vector3.Distance(Lander.transform.position, Landing_Site.transform.position);
 
-//State Vector of the Lander relative to mars
+        //State Vector of the Lander relative to mars
         Position_Vector = Lander.transform.position - Mars.transform.position;
 
         //Timer Function 
