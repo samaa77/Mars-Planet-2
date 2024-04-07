@@ -139,35 +139,35 @@ public class ThrustersWithRotation : MonoBehaviour
             // Wait for a client to connect
             thrusterClient = thrusterListener.AcceptTcpClient();
 
-            // Create a new timer to call the ReadDataFromClient function every second
-            Timer timer = new Timer(ReadDataFromClient, null, 0, 1000);
+            // Create a new thread to continuously read data from the client
+            Thread readDataThread = new Thread(ReadDataFromClient);
+            readDataThread.Start();
         }
     }
 
-    void ReadDataFromClient(object state)
+    void ReadDataFromClient()
     {
-        // Read the data from the client
-        NetworkStream stream = thrusterClient.GetStream();
-        byte[] data = new byte[1024];
-        int bytesRead = stream.Read(data, 0, data.Length);
-
-        // Parse the data into the thrusterMagnitudes array
-        string dataString = Encoding.UTF8.GetString(data, 0, bytesRead);
-        string[] thrusterData = dataString.Split(';');
-        for (int i = 0; i < thrusterData.Length; i++)
+        while (true)
         {
-            if (!float.TryParse(thrusterData[i], out thrusterMagnitudes[i]))
+            // Read the data from the client
+            NetworkStream stream = thrusterClient.GetStream();
+            byte[] data = new byte[1024];
+            int bytesRead = stream.Read(data, 0, data.Length);
+
+            // Parse the data into the thrusterMagnitudes array
+            string dataString = Encoding.UTF8.GetString(data, 0, bytesRead);
+            string[] thrusterData = dataString.Split(';');
+            for (int i = 0; i < thrusterData.Length; i++)
             {
-                Debug.LogError("Invalid data received from client: " + thrusterData[i]);
-                continue;
+                if (!float.TryParse(thrusterData[i], out thrusterMagnitudes[i]))
+                {
+                    Debug.LogError("Invalid data received from client: " + thrusterData[i]);
+                    continue;
+                }
             }
+
+            // Print a message to the console indicating that data has been received
+            Debug.Log("Data received from client: " + dataString);
         }
-
-        // Print a message to the console indicating that data has been received
-        Debug.Log("Data received from client: " + dataString);
-
-        // Close the client connection
-        thrusterClient.Close();
     }
-
 }
