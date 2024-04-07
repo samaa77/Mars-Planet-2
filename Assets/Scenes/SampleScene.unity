@@ -20563,8 +20563,8 @@ Transform:
   m_Children:
   - {fileID: 831120276}
   - {fileID: 1002087474}
-  - {fileID: 1080520935}
   - {fileID: 2117987373}
+  - {fileID: 1080520935}
   m_Father: {fileID: 543450653108149883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419766507
@@ -31809,14 +31809,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653108149883}
-  - component: {fileID: 919132148580435138}
   - component: {fileID: 919132148580435139}
   - component: {fileID: 919132148580435144}
+  - component: {fileID: 919132148580435138}
   - component: {fileID: 919132148580435140}
   - component: {fileID: 919132148580435142}
-  - component: {fileID: 919132148580435143}
   - component: {fileID: 919132148580435145}
   - component: {fileID: 919132148580435146}
+  - component: {fileID: 919132148580435148}
   - component: {fileID: 919132148580435147}
   m_Layer: 0
   m_Name: Mars 2020
@@ -31847,7 +31847,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148580435137}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3152.5
   m_Drag: 1
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -31929,55 +31929,6 @@ MonoBehaviour:
   Position_Vector: {x: 0, y: 0, z: 0}
   lasrEulerAngle: {x: 0, y: 0, z: 0}
   currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
---- !u!114 &919132148580435143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148580435137}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 989095edec7c322498b685cbb9f26c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrusterConnectionIP: 127.0.0.1
-  thrusterConnectionPort: 25001
-  sensorsServerHost: 127.0.0.1
-  sensorsServerPort: 25002
-  Lander: {fileID: 919132148580435137}
-  Mars: {fileID: 697514150}
-  North_Pole: {fileID: 1883752056}
-  Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  currentAcceleration: {x: 0, y: 0, z: 0}
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  lasrEulerAngle: {x: 0, y: 0, z: 0}
-  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
 --- !u!135 &919132148580435144
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32006,7 +31957,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148580435137}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f47d4978ec59cb4593ffcc66886fa85, type: 3}
   m_Name: 
@@ -32025,7 +31976,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148580435137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76f90bc848333484e9e29e572f3fb059, type: 3}
   m_Name: 
@@ -32038,10 +31989,10 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 1}
   thrusterMagnitudes:
-  - 0.15
-  - 0.15
-  - 0.15
-  - 0.15
+  - 0
+  - 0
+  - 0
+  - 0
   rotationAngles:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -32099,6 +32050,41 @@ MonoBehaviour:
   Position_Vector: {x: 0, y: 0, z: 0}
   lasrEulerAngle: {x: 0, y: 0, z: 0}
   currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
+--- !u!114 &919132148580435148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148580435137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e265c1e3b8a957d4383da71c75061c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrusterConnectionIP: 127.0.0.1
+  thrusterConnectionPort: 25001
+  thrusterDirections:
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1}
+  thrusterMagnitudes:
+  - 0
+  - 0
+  - 0
+  - 0
+  rotationAngles:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  thrusterLocations:
+  - {fileID: 831120275}
+  - {fileID: 1002087473}
+  - {fileID: 2117987372}
+  - {fileID: 1080520934}
+  pulseDuration: 0.1
 --- !u!23 &921028512835843871
 MeshRenderer:
   m_ObjectHideFlags: 0
