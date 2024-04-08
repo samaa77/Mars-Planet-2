@@ -32069,7 +32069,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 1}
-  thrusterMagnitudes:
+  thrusterMagnitudesPrecentages:
   - 0
   - 0
   - 0
