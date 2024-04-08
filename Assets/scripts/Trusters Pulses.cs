@@ -15,7 +15,7 @@ public class ThrustersPulses : MonoBehaviour
     TcpClient thrusterClient;
 
     public Vector3[] thrusterDirections = new Vector3[4]; // Array to store the thruster directions
-    public float[] thrusterMagnitudes = new float[4]; // Array to store the thruster magnitudes
+    public float[] thrusterMagnitudesPrecentages = new float[4]; // Array to store the thruster magnitudes
     public Vector3[] rotationAngles; // Array to store the Euler angles for each thruster
 
     public GameObject[] thrusterLocations; // Array to store the thruster locations
@@ -47,7 +47,7 @@ public class ThrustersPulses : MonoBehaviour
         }
 
         // Check if the thrusterMagnitudes array has the same length as the thrusterLocations array
-        if (thrusterMagnitudes.Length != thrusterLocations.Length)
+        if (thrusterMagnitudesPrecentages.Length != thrusterLocations.Length)
         {
             Debug.LogError("Thruster magnitudes array and thruster locations array have different lengths. Please make sure that both arrays have the same number of elements.");
             return;
@@ -61,7 +61,7 @@ public class ThrustersPulses : MonoBehaviour
         }
 
         Rb = GetComponent<Rigidbody>();
-        previousThrusterMagnitudes = new float[thrusterMagnitudes.Length];
+        previousThrusterMagnitudes = new float[thrusterMagnitudesPrecentages.Length];
         previousThrusterEulerAngles = new Vector3[rotationAngles.Length];
         hasFixedUpdateBeenCalledThisFrame = false;
     }
@@ -95,17 +95,17 @@ public class ThrustersPulses : MonoBehaviour
         // Apply rotated forces from each thruster
         for (int i = 0; i < thrusterLocations.Length; i++)
         {
-            if (thrusterMagnitudes[i] != previousThrusterMagnitudes[i])
+            if (thrusterMagnitudesPrecentages[i] != previousThrusterMagnitudes[i])
             {
-                Debug.Log("Thruster " + i + " magnitude changed to " + thrusterMagnitudes[i]);
-                previousThrusterMagnitudes[i] = thrusterMagnitudes[i];
+                Debug.Log("Thruster " + i + " magnitude changed to " + thrusterMagnitudesPrecentages[i]);
+                previousThrusterMagnitudes[i] = thrusterMagnitudesPrecentages[i];
 
                 // If the thruster magnitude has changed, start the pulse timer
                 pulseStartTime = Time.time;
             }
 
             // Convert the thruster magnitude to a percentage
-            float percentage = thrusterMagnitudes[i] / 100f;
+            float percentage = thrusterMagnitudesPrecentages[i] / 100f;
 
             // Calculate the force based on the percentage and the maximum thrust force
             float force = percentage * 302.5f;
@@ -146,7 +146,7 @@ public class ThrustersPulses : MonoBehaviour
             // Stop applying the force
             for (int i = 0; i < thrusterLocations.Length; i++)
             {
-                thrusterMagnitudes[i] = 0f;
+                thrusterMagnitudesPrecentages[i] = 0f;
             }
         }
 
@@ -187,7 +187,7 @@ public class ThrustersPulses : MonoBehaviour
             string[] thrusterData = dataString.Split(';');
             for (int i = 0; i < thrusterData.Length; i++)
             {
-                if (!float.TryParse(thrusterData[i], out thrusterMagnitudes[i]))
+                if (!float.TryParse(thrusterData[i], out thrusterMagnitudesPrecentages[i]))
                 {
                     Debug.LogError("Invalid data received from client: " + thrusterData[i]);
                     continue;
