@@ -123,7 +123,7 @@ public class ThrustersPulses : MonoBehaviour
             Rb.AddForceAtPosition(rotatedForce, thrusterLocations[i].transform.position, ForceMode.Impulse);
 
             // Draw a ray to visualize the thruster direction
-            Debug.DrawRay(thrusterLocations[i].transform.position, -rotatedForce, Color.red, 0.2f);
+            Debug.DrawRay(thrusterLocations[i].transform.position, -rotatedForce, Color.red, 1f);
         }
 
 
@@ -133,7 +133,7 @@ public class ThrustersPulses : MonoBehaviour
             if (rotationAngles[i] != previousThrusterEulerAngles[i])
             {
                 // Print the rotation angles to the console
-                Debug.Log("Rotation angles for thruster " + i + " changed to: " + rotationAngles[i]);
+                //Debug.Log("Rotation angles for thruster " + i + " changed to: " + rotationAngles[i]);
 
                 // Update the previous rotation angles
                 previousThrusterEulerAngles[i] = rotationAngles[i];
