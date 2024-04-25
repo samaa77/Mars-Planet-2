@@ -15,7 +15,11 @@ public class ThrustersPulses2 : MonoBehaviour
     TcpClient thrusterClient;
 
     private Vector3[] thrusterDirections = { new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1) };    // Array to store the thruster directions
+    Drag-Force-Trial_Essam
     public float GroupedThrustersMagnitude = 1.0f; // Multiplier for all thrusters' magnitudes    
+
+    public float GroupedMagnitude = 1.0f; // Multiplier for all thrusters' magnitudes    
+    Production
     public float[] thrusterMagnitudes = new float[4]; // Array to store the thruster magnitudes
 
     public GameObject[] thrusterLocations; // Array to store the thruster locations
@@ -72,7 +76,11 @@ public class ThrustersPulses2 : MonoBehaviour
         for (int i = 0; i < thrusterLocations.Length; i++)
         {
             // Multiply each thruster's magnitude by the GroupedThrustersMagnitude factor
+            Drag-Force-Trial_Essam
             float scaledMagnitude = thrusterMagnitudes[i] * GroupedThrustersMagnitude;
+
+            float scaledMagnitude = thrusterMagnitudes[i] * GroupedMagnitude;
+             Production
 
             // Transform the thruster direction from local space to world space
             Vector3 worldSpaceThrusterDirection = transform.TransformDirection(thrusterDirections[i]);
