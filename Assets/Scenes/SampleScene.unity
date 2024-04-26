@@ -11096,102 +11096,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327397140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &843172732
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 543450652986351725}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      propertyPath: m_Name
-      value: Mars Lander Updated_Collision
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 843172735}
-  m_SourcePrefab: {fileID: 100100000, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
---- !u!4 &843172733 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-  m_PrefabInstance: {fileID: 843172732}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &843172734 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
-  m_PrefabInstance: {fileID: 843172732}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &843172735
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843172734}
-  m_Material: {fileID: 13400000, guid: 8262746028fed5842a0a4a76eea6b175, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1354445856614592872, guid: 1524cae79be381b4ea822bfe0a7da2d0, type: 3}
 --- !u!1 &926844014
 GameObject:
   m_ObjectHideFlags: 0
@@ -33075,7 +32979,6 @@ Transform:
   - {fileID: 5612786134668100658}
   - {fileID: 5834270484629102736}
   - {fileID: 5948371335786865611}
-  - {fileID: 843172733}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653108149883
@@ -34506,6 +34409,7 @@ GameObject:
   - component: {fileID: 713672584}
   - component: {fileID: 919132148794194648}
   - component: {fileID: 919132148794194649}
+  - component: {fileID: 919132148794194650}
   m_Layer: 0
   m_Name: Mars Lander Updated
   m_TagString: Untagged
@@ -34555,6 +34459,28 @@ MonoBehaviour:
   pulseInterval: 1
   totalPulses: 1
   spinningSpeed: 0
+--- !u!64 &919132148794194650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148794194647}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1354445856614592872, guid: eeb008dac0d8f5744acc72509fefd02e, type: 3}
 --- !u!23 &921028512835843871
 MeshRenderer:
   m_ObjectHideFlags: 0
