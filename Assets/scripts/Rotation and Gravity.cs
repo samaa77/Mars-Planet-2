@@ -5,17 +5,20 @@ public class OrbitalMechanics : MonoBehaviour
     public Transform mars;
     public float marsMass = 6.4171e23f; // Mass of Mars in kg
     public float landerMass = 3152.5f; // Mass of the lander in kg
-    public Vector3 initialVelocity = new Vector3(3678.46907861f, 2808.78515445f, 408.75889788f);
-
-    public float TorqueStrength = 10f; // Adjust this value as needed
+    // Scaled initial velocity in Unity units per second
+    public Vector3 initialVelocity = new Vector3(2.808785f, 0.408759f, 3.678469f); 
+    public Vector3 currentVelocity;
+    public float TorqueStrength = 15f; // Adjust this value as needed
 
     private Rigidbody _rigidbody;
     private const float G = 6.67430e-11f; // Universal gravitational constant
-    private Vector3 currentVelocity;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+
+        // Apply the scaled initial velocity
+        _rigidbody.velocity = initialVelocity;
 
         // Scale down the masses and G by the simulation scale factor (1:1000)
         float scaledG = G / Mathf.Pow(1000, 3);
@@ -26,7 +29,7 @@ public class OrbitalMechanics : MonoBehaviour
         Vector3 distance = transform.position - mars.position;
         float forceMagnitude = scaledG * (marsMass * landerMass) / distance.sqrMagnitude;
         Vector3 force = forceMagnitude * distance.normalized;
-        currentVelocity = initialVelocity - force / landerMass * Time.fixedDeltaTime;
+        currentVelocity = _rigidbody.velocity - force / landerMass * Time.fixedDeltaTime;
     }
 
     void FixedUpdate()
