@@ -42,6 +42,6 @@ public class marsGravity : MonoBehaviour // Use PascalCase for class names
         rb.AddForce(-normalizedDirection * gravity * rb.mass, ForceMode.Force);
 
         // Draw a red ray to visualize the direction of gravity force (for debugging)
-        Debug.DrawRay(transform.position, normalizedDirection, Color.red);
+        Debug.DrawRay(transform.position, normalizedDirection * 10, Color.red);
     }
 }
