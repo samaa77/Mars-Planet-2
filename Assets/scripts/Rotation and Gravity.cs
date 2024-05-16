@@ -21,8 +21,8 @@ public class OrbitalMechanics : MonoBehaviour
         _rigidbody.velocity = initialVelocity;
 
         // Scale down the masses and G by the simulation scale factor (1:1000)
-        float scaledG = G / Mathf.Pow(1000, 3);
-        marsMass /= Mathf.Pow(1000, 3);
+        float scaledG = G / Mathf.Pow(1000, 2);
+        marsMass /= 1000f;
         landerMass /= 1000f;
 
         // Calculate initial force and velocity
@@ -41,7 +41,8 @@ public class OrbitalMechanics : MonoBehaviour
     void ApplyGravity()
     {
         Vector3 distance = transform.position - mars.position;
-        float forceMagnitude = G * (marsMass * landerMass) / distance.sqrMagnitude;
+        float scaledG = G / Mathf.Pow(1000, 2);
+        float forceMagnitude = scaledG * (marsMass * landerMass) / distance.sqrMagnitude;
         Vector3 force = forceMagnitude * distance.normalized;
 
         // Apply the gravity as an acceleration

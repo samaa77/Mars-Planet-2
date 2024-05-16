@@ -6085,36 +6085,6 @@ MonoBehaviour:
   Acceleration_Vector: {x: 0, y: 0, z: 0}
   Euler_Angles: {x: 0, y: 0, z: 0}
   Angular_Velocity: {x: 0, y: 0, z: 0}
---- !u!114 &713672587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5288757de1c022c4594c1fb2dc4f8ddc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 11663335}
-  speed: -1
---- !u!114 &713672588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a2e5b1b241d624493589f951926e85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravityTarget: {fileID: 11663335}
-  intensity: 15000
-  torque: 500
-  gravity: 3.71
 --- !u!114 &713672589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34358,14 +34328,12 @@ GameObject:
   - component: {fileID: 543450652986351725}
   - component: {fileID: 713672591}
   - component: {fileID: 713672589}
-  - component: {fileID: 713672588}
-  - component: {fileID: 713672587}
   - component: {fileID: 713672585}
   - component: {fileID: 713672584}
   - component: {fileID: 919132148794194648}
   - component: {fileID: 919132148794194649}
   - component: {fileID: 919132148794194650}
-  - component: {fileID: 919132148794194652}
+  - component: {fileID: 919132148794194651}
   m_Layer: 0
   m_Name: Mars Lander Updated
   m_TagString: Untagged
@@ -34437,7 +34405,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1354445856614592872, guid: eeb008dac0d8f5744acc72509fefd02e, type: 3}
---- !u!114 &919132148794194652
+--- !u!114 &919132148794194651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
