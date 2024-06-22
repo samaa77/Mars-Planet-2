@@ -4,11 +4,11 @@ public class OrbitalMechanics2 : MonoBehaviour
 {
     // Public variables for easy editing in Unity Editor
     public Transform mars;
-    public float actualMarsMass = 6.4171e23f; // Actual mass of Mars in kg
-    public float actualLanderMass = 3152.5f; // Actual mass of the lander in kg
-    public Vector3 actualInitialVelocity = new Vector3(2808.78515445f, 408.75889788f, 3678.46907861f); // Actual initial velocity in m/s
-    public Vector3 currentVelocity;
+    public float realMarsMass = 6.4171e23f; // Actual mass of Mars in kg
+    public float realLanderMass = 3152.5f; // Actual mass of the lander in kg
+    public Vector3 realInitialVelocity = new Vector3(2808.78515445f, 408.75889788f, 3678.46907861f); // Actual initial velocity in m/s
     public float TorqueStrength = 15f; // Adjust this value as needed 
+    public Vector3 currentVelocity; // For monitoring velocity changes
 
     // Private variables for internal use
     private float scaledMarsMass; // Scaled mass of Mars in Unity units
@@ -25,33 +25,28 @@ public class OrbitalMechanics2 : MonoBehaviour
         // Apply the scaled initial velocity
         _rigidbody.velocity = scaledInitialVelocity;
 
-        // Calculate initial force and velocity
-        Vector3 distance = transform.position - mars.position;
-        float forceMagnitude = scaledG * (scaledMarsMass * scaledLanderMass) / distance.sqrMagnitude;
-        Vector3 force = forceMagnitude * distance.normalized;
-        currentVelocity = _rigidbody.velocity - force / scaledLanderMass * Time.fixedDeltaTime;
+        // Initial velocity setup
+        currentVelocity = _rigidbody.velocity;
     }
 
     void FixedUpdate()
     {
         ApplyGravity();
         ApplyTorque();
+
+        // Update current velocity for monitoring
+        currentVelocity = _rigidbody.velocity;
     }
 
     void ApplyGravity()
     {
-        Vector3 distance = transform.position - mars.position;
-        float forceMagnitude = scaledG * (scaledMarsMass * scaledLanderMass) / distance.sqrMagnitude;
+        Vector3 distance = mars.position - transform.position;
+        float distanceMagnitude = distance.magnitude;
+        float forceMagnitude = scaledG * (scaledMarsMass * scaledLanderMass) / Mathf.Pow(distanceMagnitude, 2);
         Vector3 force = forceMagnitude * distance.normalized;
 
         // Apply the gravity as an acceleration
         _rigidbody.AddForce(force, ForceMode.Acceleration);
-
-        // Update velocity based on force
-        currentVelocity -= force / scaledLanderMass * Time.fixedDeltaTime;
-
-        // Update position based on current velocity
-        transform.position += currentVelocity * Time.fixedDeltaTime;
     }
 
     void ApplyTorque()
@@ -72,13 +67,13 @@ public class OrbitalMechanics2 : MonoBehaviour
         const float scaleFactor = 1000f;
 
         // Scale the masses by the scale factor (1:1000)
-        scaledMarsMass = actualMarsMass / scaleFactor;
-        scaledLanderMass = actualLanderMass / scaleFactor;
+        scaledMarsMass = realMarsMass / scaleFactor;
+        scaledLanderMass = realLanderMass / scaleFactor;
 
         // Scale the gravitational constant by the cube of the scale factor
-        scaledG = 6.67430e-11f / Mathf.Pow(scaleFactor, 3);
+        scaledG = 6.67430e-11f / Mathf.Pow(scaleFactor, 2);
 
         // Scale the initial velocity by the scale factor (1:1000)
-        scaledInitialVelocity = actualInitialVelocity / scaleFactor;
+        scaledInitialVelocity = realInitialVelocity / scaleFactor;
     }
 }
