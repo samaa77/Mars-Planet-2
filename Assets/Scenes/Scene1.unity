@@ -182,8 +182,8 @@ Transform:
   m_GameObject: {fileID: 11955143}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2307.6736, y: -1762.0814, z: 3763.1113}
-  m_LocalScale: {x: 3389.5, y: 3389.5, z: 3389.5}
+  m_LocalPosition: {x: -23076.74, y: -17620.81, z: 37631.11}
+  m_LocalScale: {x: 33895, y: 33895, z: 33895}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 705507995}
@@ -245,7 +245,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59642319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.04}
+  m_LocalPosition: {x: 0, y: 0, z: -7}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -253,7 +253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2.2, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59642321
@@ -333,8 +333,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 9999.999
+  near clip plane: 0.01
+  far clip plane: 1e+11
   field of view: 60
   orthographic: 0
   orthographic size: 0.006
@@ -549,7 +549,7 @@ Transform:
   m_GameObject: {fileID: 171856721}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0043014134, y: -0.66627413, z: -0.003843341, w: 0.7456847}
-  m_LocalPosition: {x: 0.098, y: -0.0005, z: 0.0317}
+  m_LocalPosition: {x: 0.104, y: -0.001, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5854,7 +5854,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.025
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &697514155
 MonoBehaviour:
@@ -6085,25 +6085,6 @@ MonoBehaviour:
   Acceleration_Vector: {x: 0, y: 0, z: 0}
   Euler_Angles: {x: 0, y: 0, z: 0}
   Angular_Velocity: {x: 0, y: 0, z: 0}
---- !u!114 &713672589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f47d4978ec59cb4593ffcc66886fa85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragCoefficient: 0.24
-  Frontal_Area: 0
-  lowerAtmosphereHeight: 7000
-  m: 440
-  Diameter: 0
-  velocity: {x: 0, y: 0, z: 0}
-  speed: 0
 --- !u!54 &713672591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6114,7 +6095,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 3152.5
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: -0.0215, z: -0.3}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6128,9 +6109,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &737114555
 GameObject:
   m_ObjectHideFlags: 0
@@ -10984,8 +10965,8 @@ Transform:
   m_GameObject: {fileID: 768191472}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2307.6736, y: -1762.0814, z: 3763.1113}
-  m_LocalScale: {x: 1000.00006, y: 1000.00006, z: 1000.00006}
+  m_LocalPosition: {x: -23076.74, y: -17620.81, z: 37631.11}
+  m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -11273,7 +11254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1095494730
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -16078,8 +16059,8 @@ Transform:
   m_GameObject: {fileID: 1095494729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2307.6736, y: -1762.0814, z: 3763.1113}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalPosition: {x: -23076.74, y: -17620.81, z: 37631.11}
+  m_LocalScale: {x: 22, y: 22, z: 22}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -20906,7 +20887,7 @@ Transform:
   m_GameObject: {fileID: 1102881992}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4813, y: 0, z: 50375}
+  m_LocalPosition: {x: 24289, y: 0, z: 91576}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31476,7 +31457,7 @@ Transform:
   m_GameObject: {fileID: 1961022600}
   serializedVersion: 2
   m_LocalRotation: {x: 0.040472902, y: -0.11722057, z: 0.0051525547, w: 0.9922675}
-  m_LocalPosition: {x: -0.0159, y: 0.0079, z: -0.0769}
+  m_LocalPosition: {x: -0.011, y: 0.009, z: -0.096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32880,7 +32861,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 204472817}
@@ -34327,13 +34308,14 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652986351725}
   - component: {fileID: 713672591}
-  - component: {fileID: 713672589}
+  - component: {fileID: 919132148794194650}
+  - component: {fileID: 919132148794194654}
   - component: {fileID: 713672585}
   - component: {fileID: 713672584}
   - component: {fileID: 919132148794194648}
   - component: {fileID: 919132148794194649}
-  - component: {fileID: 919132148794194650}
   - component: {fileID: 919132148794194652}
+  - component: {fileID: 919132148794194653}
   m_Layer: 0
   m_Name: Mars Lander Updated
   m_TagString: Untagged
@@ -34390,7 +34372,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8262746028fed5842a0a4a76eea6b175, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -34403,7 +34385,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 1354445856614592872, guid: eeb008dac0d8f5744acc72509fefd02e, type: 3}
 --- !u!114 &919132148794194652
 MonoBehaviour:
@@ -34421,8 +34403,72 @@ MonoBehaviour:
   realMarsMass: 6.4171e+23
   realLanderMass: 3152.5
   realInitialVelocity: {x: 2808.7852, y: 408.7589, z: 3678.469}
-  TorqueStrength: 15
+  scalingFactor: 100
   currentVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &919132148794194653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148794194647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810974feb09f93e40939fe176e78671a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragCoefficients:
+  - 0.80859405
+  - 0.4158495
+  - 0.4071914
+  - 0.01619733
+  - 0.002796626
+  - -0.10439445
+  - -0.12627868
+  - -0.42471305
+  - 0.06799861
+  liftCoefficients:
+  - 0.7378569
+  - 0.6182937
+  - 0.4071914
+  - 0.002516561
+  - 0.027966257
+  - 0.02270282
+  - -0.36785272
+  - -0.6034656
+  - -0.6172964
+  aoa:
+  - 45
+  - 30
+  - 15
+  - -5
+  - -5
+  - -5
+  - -15
+  - -30
+  - -45
+  airDensity: 0
+  angleOfAttack: 0
+  dragCoefficient: 0
+  liftCoefficient: 0
+  dragForce: 0
+  liftForce: 0
+  minRotationSpeed: 0.1
+  maxRotationSpeed: 5
+  altitude: 0
+  referenceArea: 0
+  rayDensity: 20
+  debug: 1
+  ScaleFactor: 0.01
+  mars: {fileID: 11663335}
+--- !u!33 &919132148794194654
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148794194647}
+  m_Mesh: {fileID: 1354445856614592872, guid: eeb008dac0d8f5744acc72509fefd02e, type: 3}
 --- !u!23 &921028512835843871
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55107,10 +55153,10 @@ SceneRoots:
   - {fileID: 1842871392}
   - {fileID: 1095494732}
   - {fileID: 768191475}
+  - {fileID: 11663335}
   - {fileID: 1102881995}
   - {fileID: 1961022604}
   - {fileID: 171856725}
-  - {fileID: 11663335}
   - {fileID: 543450652986351725}
   - {fileID: 543450653108149883}
   - {fileID: 543450652341130237}

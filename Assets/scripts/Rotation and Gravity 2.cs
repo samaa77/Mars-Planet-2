@@ -8,7 +8,7 @@ public class OrbitalMechanics2 : MonoBehaviour
     public float realLanderMass = 3152.5f; // Actual mass of the lander in kg
     public Vector3 realInitialVelocity = new Vector3(2808.78515445f, 408.75889788f, 3678.46907861f); // Actual initial velocity in m/s
     private float TorqueStrength = 15f; // Adjust this value as needed 
-    public float scalingFactor = 1000f; // Adjust this value as needed
+    public float scalingFactor = 100f; // Adjust this value as needed
 
     public Vector3 currentVelocity; // For monitoring velocity changes
 
@@ -66,7 +66,7 @@ public class OrbitalMechanics2 : MonoBehaviour
     private void ScalePhysicsQuantities()
     {
         // Scale factor for the simulation
-        const float scaleFactor = 1000f;
+        const float scaleFactor = 100f;
 
         // Scale the masses by the scale factor (1:1000)
         scaledMarsMass = realMarsMass / scaleFactor;
