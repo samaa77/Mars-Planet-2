@@ -6093,7 +6093,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
   serializedVersion: 4
-  m_Mass: 3152.5
+  m_Mass: 31.525
   m_Drag: 0
   m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: -0.0215, z: -0.3}
@@ -6109,9 +6109,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!1 &737114555
 GameObject:
   m_ObjectHideFlags: 0

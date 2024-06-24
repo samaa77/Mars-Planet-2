@@ -33,15 +33,17 @@ public class ScaledAirResistence : MonoBehaviour
     void Start()
     {
         landerRigidbody = GetComponent<Rigidbody>();
-        // referenceArea = CalculateReferenceArea();
+        // Enable continuous collision detection for high-speed objects
+        landerRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
     void FixedUpdate()
     {
-        // Calculate the projected position of the object based on its current velocity and the time step
-        Vector3 projectedPosition = transform.position + landerRigidbody.velocity * Time.fixedDeltaTime;
+        // Use the Rigidbody's position directly
+        Vector3 currentPosition = landerRigidbody.position;
 
-        referenceArea = CalculateReferenceAreaWithRaycasting(projectedPosition);
+        // Calculate the reference area using the current position
+        referenceArea = CalculateReferenceAreaWithRaycasting(currentPosition);
 
         // Update the altitude each frame
         altitude = CalculateAltitude();
@@ -103,7 +105,6 @@ public class ScaledAirResistence : MonoBehaviour
     float CalculateAngleOfAttack(Vector3 velocityVector)
     {
         Vector3 forwardVector = transform.forward;
-        if (velocityVector.magnitude < 0.01f) return 0f; // Handle near-zero velocities
         float angle = Vector3.Angle(forwardVector, velocityVector);
 
         // Additional logic to determine the sign of the angle
@@ -111,7 +112,6 @@ public class ScaledAirResistence : MonoBehaviour
         float signedAngle = angle * sign;
         return signedAngle;
     }
-
 
     float InterpolateCoefficients(float[] angles, float[] coefficients, float currentAngle)
     {
@@ -169,7 +169,7 @@ public class ScaledAirResistence : MonoBehaviour
 
 
     // Function to calculate the reference area using raycasting
-    float CalculateReferenceAreaWithRaycasting(Vector3 projectedPosition)
+    float CalculateReferenceAreaWithRaycasting(Vector3 currentPosition)
     {
         float width = 30f * ScaleFactor; // Width of the cube
         float height = 30f * ScaleFactor; // Height of the cube
@@ -177,7 +177,6 @@ public class ScaledAirResistence : MonoBehaviour
         float totalArea = 0f; // Initialize total area
         Vector3 offset = Vector3.zero; // Offset for the cube
 
-        // Normalize the velocity vector to ensure correct ray direction
         Vector3 landerVelocity = landerRigidbody.velocity;
         if (landerVelocity.magnitude < 0.01f)
         {
@@ -186,42 +185,35 @@ public class ScaledAirResistence : MonoBehaviour
 
         Vector3 landerVelocityNormalized = landerVelocity.normalized;
 
-        // Ensure the velocity vector is not zero
         if (landerVelocityNormalized == Vector3.zero)
         {
             Debug.LogError("Velocity is zero. Cannot calculate projected area.");
             return 0f;
         }
 
-        // Cast rays within the defined cube volume
         Vector3 rayDirection = -landerVelocityNormalized;
-        Vector3 cubeCenter = transform.position + offset; // Apply the offset here
+        Vector3 cubeCenter = currentPosition + offset;
         Vector3 cubeSize = new Vector3(width, height, depth);
 
-        // Calculate spacing based on ray density
         float widthSpacing = width / rayDensity;
         float heightSpacing = height / rayDensity;
         float depthSpacing = depth / rayDensity;
 
-        // Iterate over the volume of the cube
         for (float d = -depth / 2; d < depth / 2; d += depthSpacing)
         {
             for (float w = -width / 2; w < width / 2; w += widthSpacing)
             {
                 for (float h = -height / 2; h < height / 2; h += heightSpacing)
                 {
-                    // Cast position is now based on a fixed point relative to the object's current position
                     Vector3 castPosition = cubeCenter + new Vector3(w, h, d);
                     Ray ray = new Ray(castPosition, rayDirection);
                     RaycastHit hit;
 
-                    // Cast the ray and calculate the area contribution if it hits
                     if (Physics.Raycast(ray, out hit, depthSpacing))
                     {
                         float areaContribution = widthSpacing * heightSpacing;
                         totalArea += areaContribution;
 
-                        // Conditional debug visualization
                         if (debug)
                         {
                             if (hit.transform == transform)
@@ -236,14 +228,12 @@ public class ScaledAirResistence : MonoBehaviour
                     }
                     else if (debug)
                     {
-                        // Draw the ray for the size of the cube if no hit occurs
                         Debug.DrawRay(castPosition, rayDirection * depthSpacing, Color.white);
                     }
                 }
             }
         }
 
-        // The total area is the sum of the contributions from the ray hits
         return totalArea;
     }
 
