@@ -7,7 +7,7 @@ public class OrbitalMechanics2 : MonoBehaviour
     public float realMarsMass = 6.4171e23f; // Actual mass of Mars in kg
     public float realLanderMass = 3152.5f; // Actual mass of the lander in kg
     public Vector3 realInitialVelocity = new Vector3(2808.78515445f, 408.75889788f, 3678.46907861f); // Actual initial velocity in m/s
-    private float TorqueStrength = 15f; // Adjust this value as needed 
+    private float TorqueStrength = 15f; // Adjust this value as needed
     public float scalingFactor = 100f; // Adjust this value as needed
 
     public Vector3 currentVelocity; // For monitoring velocity changes
@@ -44,7 +44,7 @@ public class OrbitalMechanics2 : MonoBehaviour
     {
         Vector3 distance = mars.position - transform.position;
         float distanceMagnitude = distance.magnitude;
-        float forceMagnitude = scaledG * (scaledMarsMass * scaledLanderMass) / Mathf.Pow(distanceMagnitude, 2);
+        float forceMagnitude = scaledG * (scaledMarsMass) / Mathf.Pow(distanceMagnitude, 2);
         Vector3 force = forceMagnitude * distance.normalized;
 
         // Apply the gravity as an acceleration
@@ -68,14 +68,14 @@ public class OrbitalMechanics2 : MonoBehaviour
         // Scale factor for the simulation
         const float scaleFactor = 100f;
 
-        // Scale the masses by the scale factor (1:1000)
+        // Scale the masses by the scale factor (1:100)
         scaledMarsMass = realMarsMass / scaleFactor;
         scaledLanderMass = realLanderMass / scaleFactor;
 
-        // Scale the gravitational constant by the cube of the scale factor
+        // Scale the gravitational constant by the square of the scale factor
         scaledG = 6.67430e-11f / Mathf.Pow(scaleFactor, 2);
 
-        // Scale the initial velocity by the scale factor (1:1000)
+        // Scale the initial velocity by the scale factor (1:100)
         scaledInitialVelocity = realInitialVelocity / scaleFactor;
     }
 }
