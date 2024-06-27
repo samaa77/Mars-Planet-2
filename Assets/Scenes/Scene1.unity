@@ -11076,7 +11076,7 @@ GameObject:
   - component: {fileID: 953954351}
   - component: {fileID: 953954350}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: scene2 controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11094,7 +11094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55945fb0268c37a4581fb417a2de6b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 20
+  delayTime: 100
 --- !u!4 &953954351
 Transform:
   m_ObjectHideFlags: 0
@@ -16159,7 +16159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1102881993
 ParticleSystemRenderer:
   serializedVersion: 6
