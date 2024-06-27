@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 697514155}
   - component: {fileID: 697514151}
   - component: {fileID: 697514158}
+  - component: {fileID: 697514159}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Untagged
@@ -5850,7 +5851,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5897,6 +5898,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &697514159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11955143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37989c0f2e7bf9042a1150d99b5009d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6179,7 +6192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &768191473
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -11052,6 +11065,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 204472817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &953954349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953954351}
+  - component: {fileID: 953954350}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &953954350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953954349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55945fb0268c37a4581fb417a2de6b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 20
+--- !u!4 &953954351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953954349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7927.401, y: 1542.1868, z: 5580.7827}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -11273,7 +11331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1095494730
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -34336,7 +34394,7 @@ GameObject:
   - component: {fileID: 919132148794194652}
   m_Layer: 0
   m_Name: Mars Lander Updated
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34421,7 +34479,7 @@ MonoBehaviour:
   realMarsMass: 6.4171e+23
   realLanderMass: 3152.5
   realInitialVelocity: {x: 2808.7852, y: 408.7589, z: 3678.469}
-  TorqueStrength: 15
+  scalingFactor: 1000
   currentVelocity: {x: 0, y: 0, z: 0}
 --- !u!23 &921028512835843871
 MeshRenderer:
@@ -55115,3 +55173,4 @@ SceneRoots:
   - {fileID: 543450653108149883}
   - {fileID: 543450652341130237}
   - {fileID: 1498153938}
+  - {fileID: 953954351}
