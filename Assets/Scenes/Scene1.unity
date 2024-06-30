@@ -34534,11 +34534,18 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  debug: 0
+  effectsEnabled: 1
   thrusterLocations:
   - {fileID: 1915776476}
   - {fileID: 178079324}
   - {fileID: 926844014}
   - {fileID: 320711798}
+  thrusterEffects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pulseDuration: 0.1
 --- !u!23 &921028512835843871
 MeshRenderer:
