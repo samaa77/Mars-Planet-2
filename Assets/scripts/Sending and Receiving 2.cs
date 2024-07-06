@@ -4,7 +4,7 @@ using System.Text;
 using UnityEngine;
 using System.Threading;
 
-public class modifiedSensorsOnly : MonoBehaviour
+public class SensorsSender : MonoBehaviour
 {
     // Sensors data variabless
     public string sensorsServerHost = "127.0.0.1";
