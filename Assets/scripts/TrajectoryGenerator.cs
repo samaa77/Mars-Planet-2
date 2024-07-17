@@ -22,24 +22,31 @@ public class TrajectoryGenerator : MonoBehaviour
     [Header("Debug Info")]
     public float timeToLanding;  // Time to landing in seconds
     public float altitude;  // Altitude from Mars surface to lander in meters
-
-    [Header("Position Relative to Mars")]
     public Vector3 positionRelativeToMars;  // Position of the lander relative to Mars center
 
-    private float scaleFactor = 100f;  // Scale factor: 1 unit in simulation = scaleFactor meters in real life
+    private float scaleFactor = 0.01f;  // Scale factor: 1 unit in simulation = scaleFactor meters in real life
 
     private List<TrajectoryPoint> trajectoryPoints;
     private float startTime;
     private int currentSegment;
 
-    private float marsRadius = 3389500f;  // Mars's radius in meters (3389.5 km * scaleFactor)
+    private float marsRadius = 33895f;  // Mars's radius in meters
 
     void Start()
     {
         trajectoryPoints = LoadTrajectoryPointsFromCSV(filePath);
+        trajectoryPoints = FilterTrajectoryPoints(trajectoryPoints); // Filter points to ensure altitude decreases
+
         if (trajectoryPoints != null && trajectoryPoints.Count > 0)
         {
             startTime = Time.time;
+            currentSegment = 0;
+
+            // Debug: Print loaded trajectory points
+            foreach (var point in trajectoryPoints)
+            {
+                Debug.Log($"TimeToLanding: {point.TimeToLanding}, Position: {point.Position}");
+            }
         }
         else
         {
@@ -51,8 +58,59 @@ public class TrajectoryGenerator : MonoBehaviour
     {
         if (trajectoryPoints != null && trajectoryPoints.Count > 0)
         {
-            AnimateLander();
-            UpdateLanderInfo();
+            float elapsedTime = Time.time - startTime;
+            float currentTimeToLanding = trajectoryPoints[0].TimeToLanding - elapsedTime;
+
+            if (currentSegment < trajectoryPoints.Count - 1 && currentTimeToLanding <= trajectoryPoints[currentSegment + 1].TimeToLanding)
+            {
+                currentSegment++;
+            }
+
+            if (currentSegment < trajectoryPoints.Count - 1)
+            {
+                TrajectoryPoint previousPoint = trajectoryPoints[currentSegment];
+                TrajectoryPoint nextPoint = trajectoryPoints[currentSegment + 1];
+
+                float t = (previousPoint.TimeToLanding - currentTimeToLanding) /
+                          (previousPoint.TimeToLanding - nextPoint.TimeToLanding);
+                Vector3 interpolatedPosition = Vector3.Lerp(previousPoint.Position, nextPoint.Position, t) * scaleFactor;
+                transform.position = mars.position + interpolatedPosition;
+
+                // Update position relative to Mars
+                positionRelativeToMars = interpolatedPosition;
+
+                // Calculate time to landing and altitude
+                timeToLanding = currentTimeToLanding;
+                altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
+
+                // Debug: Print interpolated position, time to landing, and altitude
+                Debug.Log($"Interpolated Position: {interpolatedPosition}");
+                Debug.Log($"Time to Landing: {timeToLanding}");
+                Debug.Log($"Altitude: {altitude}");
+            }
+            else if (currentTimeToLanding <= 0)
+            {
+                // Final position at landing
+                transform.position = mars.position + trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor;
+
+                // Update position relative to Mars
+                positionRelativeToMars = trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor;
+
+                // Calculate time to landing and altitude
+                timeToLanding = 0;
+                altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
+
+                // Debug: Print final position, time to landing, and altitude
+                Debug.Log($"Final Position: {positionRelativeToMars}");
+                Debug.Log($"Time to Landing: {timeToLanding}");
+                Debug.Log($"Altitude: {altitude}");
+            }
+
+            // Ensure time to landing is non-negative
+            timeToLanding = Mathf.Max(timeToLanding, 0);
+
+            // Ensure altitude is non-negative
+            altitude = Mathf.Max(altitude, 0);
         }
     }
 
@@ -96,54 +154,21 @@ public class TrajectoryGenerator : MonoBehaviour
         return points;
     }
 
-    void AnimateLander()
+    List<TrajectoryPoint> FilterTrajectoryPoints(List<TrajectoryPoint> points)
     {
-        float elapsedTime = Time.time - startTime;
-        float currentTimeToLanding = trajectoryPoints[0].TimeToLanding - elapsedTime;
+        var filteredPoints = new List<TrajectoryPoint>();
+        if (points == null || points.Count == 0)
+            return filteredPoints;
 
-        if (currentSegment < trajectoryPoints.Count - 1)
+        filteredPoints.Add(points[0]);
+        for (int i = 1; i < points.Count; i++)
         {
-            while (currentSegment < trajectoryPoints.Count - 1 && trajectoryPoints[currentSegment + 1].TimeToLanding <= currentTimeToLanding)
+            if (points[i].Position.y <= filteredPoints[filteredPoints.Count - 1].Position.y)
             {
-                currentSegment++;
-            }
-
-            if (currentSegment < trajectoryPoints.Count - 1)
-            {
-                TrajectoryPoint previousPoint = trajectoryPoints[currentSegment];
-                TrajectoryPoint nextPoint = trajectoryPoints[currentSegment + 1];
-
-                float t = (previousPoint.TimeToLanding - currentTimeToLanding) /
-                          (previousPoint.TimeToLanding - nextPoint.TimeToLanding);
-                Vector3 interpolatedPosition = Vector3.Lerp(previousPoint.Position, nextPoint.Position, t) * scaleFactor;
-                transform.position = mars.position + interpolatedPosition;
-
-                // Update position relative to Mars
-                positionRelativeToMars = interpolatedPosition;
-
-                // Calculate time to landing and altitude
-                timeToLanding = currentTimeToLanding;
-                altitude = Vector3.Distance(transform.position, mars.position) - marsRadius * scaleFactor;
-            }
-            else if (currentTimeToLanding <= 0)
-            {
-                // Final position at landing
-                transform.position = mars.position + trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor;
-
-                // Update position relative to Mars
-                positionRelativeToMars = trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor;
-
-                // Calculate time to landing and altitude
-                timeToLanding = 0;
-                altitude = Vector3.Distance(transform.position, mars.position) - marsRadius * scaleFactor;
+                filteredPoints.Add(points[i]);
             }
         }
-    }
 
-    void UpdateLanderInfo()
-    {
-        // Update debug info fields
-        timeToLanding = Mathf.Max(timeToLanding, 0);  // Ensure time to landing is non-negative
-        altitude = Mathf.Max(altitude, 0);  // Ensure altitude is non-negative
+        return filteredPoints;
     }
 }
