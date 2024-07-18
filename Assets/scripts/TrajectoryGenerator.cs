@@ -34,6 +34,7 @@ public class TrajectoryGenerator : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start method called");
         trajectoryPoints = LoadTrajectoryPointsFromCSV(filePath);
         trajectoryPoints = FilterTrajectoryPoints(trajectoryPoints); // Filter points to ensure altitude decreases
 
@@ -41,6 +42,19 @@ public class TrajectoryGenerator : MonoBehaviour
         {
             startTime = Time.time;
             currentSegment = 0;
+
+            // Debug: Print initial Mars position
+            Debug.Log($"Initial Mars Position: {mars.position}");
+
+            // Debug: Print first trajectory point raw and scaled
+            Debug.Log($"First Trajectory Point (Raw): {trajectoryPoints[0].Position}");
+            Debug.Log($"First Trajectory Point (Scaled): {trajectoryPoints[0].Position * scaleFactor}");
+
+            // Set initial position based on the first trajectory point
+            transform.position = mars.position + trajectoryPoints[0].Position * scaleFactor;
+
+            // Debug: Print initial Lander position
+            Debug.Log($"Initial Transform Position: {transform.position}");
 
             // Debug: Print loaded trajectory points
             foreach (var point in trajectoryPoints)
@@ -84,7 +98,9 @@ public class TrajectoryGenerator : MonoBehaviour
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
                 // Debug: Print interpolated position, time to landing, and altitude
-                Debug.Log($"Interpolated Position: {interpolatedPosition}");
+                Debug.Log($"Interpolated Position (Raw): {interpolatedPosition / scaleFactor}");
+                Debug.Log($"Interpolated Position (Scaled): {interpolatedPosition}");
+                Debug.Log($"Transform Position: {transform.position}");
                 Debug.Log($"Time to Landing: {timeToLanding}");
                 Debug.Log($"Altitude: {altitude}");
             }
@@ -101,7 +117,9 @@ public class TrajectoryGenerator : MonoBehaviour
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
                 // Debug: Print final position, time to landing, and altitude
-                Debug.Log($"Final Position: {positionRelativeToMars}");
+                Debug.Log($"Final Position (Raw): {trajectoryPoints[trajectoryPoints.Count - 1].Position}");
+                Debug.Log($"Final Position (Scaled): {trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor}");
+                Debug.Log($"Transform Position: {transform.position}");
                 Debug.Log($"Time to Landing: {timeToLanding}");
                 Debug.Log($"Altitude: {altitude}");
             }

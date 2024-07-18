@@ -36367,7 +36367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1842871390
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -44640,7 +44640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lander: {fileID: 919132148794194647}
   mars: {fileID: 11955143}
-  triggerDistance: 47500
+  triggerDistance: 36.895
   particleSystemObject: {fileID: 1344792314}
   currentDistance: 0
 --- !u!114 &919132148794194657
@@ -44650,7 +44650,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42994064eda662f4692eecf00a0944f2, type: 3}
   m_Name: 
