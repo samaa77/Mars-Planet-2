@@ -172,7 +172,8 @@ public class SensorsSender : MonoBehaviour
             // Prepare data to send and Convert the Scale to a string format
             string dataToSend = '\n' + "currentAcceleration [" + currentAcceleration.x + "," + currentAcceleration.y + "," + currentAcceleration.z + "]" + '\n' +
                 "Magnetometer_Vector [" + Magnetometer_Vector.x + "," + Magnetometer_Vector.y + "," + Magnetometer_Vector.z + "]" + '\n' +
-                "currentChangeRateOfEulerAngel [" + currentChangeRateOfEulerAngel.x + "," + currentChangeRateOfEulerAngel.y + "," + currentChangeRateOfEulerAngel.z + "]";
+                "currentChangeRateOfEulerAngel [" + currentChangeRateOfEulerAngel.x + "," + currentChangeRateOfEulerAngel.y + "," + currentChangeRateOfEulerAngel.z + "]" + '\n' +
+                "Current Euler Angles [" + Lander.transform.eulerAngles.x + "," + Lander.transform.eulerAngles.y + "," + Lander.transform.eulerAngles.z + "]";
             
             // Send the data
             NetworkStream stream = client.GetStream();

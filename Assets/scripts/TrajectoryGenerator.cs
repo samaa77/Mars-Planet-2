@@ -44,22 +44,22 @@ public class TrajectoryGenerator : MonoBehaviour
             currentSegment = 0;
 
             // Debug: Print initial Mars position
-            Debug.Log($"Initial Mars Position: {mars.position}");
+            //Debug.Log($"Initial Mars Position: {mars.position}");
 
             // Debug: Print first trajectory point raw and scaled
-            Debug.Log($"First Trajectory Point (Raw): {trajectoryPoints[0].Position}");
-            Debug.Log($"First Trajectory Point (Scaled): {trajectoryPoints[0].Position * scaleFactor}");
+            //Debug.Log($"First Trajectory Point (Raw): {trajectoryPoints[0].Position}");
+            //Debug.Log($"First Trajectory Point (Scaled): {trajectoryPoints[0].Position * scaleFactor}");
 
             // Set initial position based on the first trajectory point
             transform.position = mars.position + trajectoryPoints[0].Position * scaleFactor;
 
             // Debug: Print initial Lander position
-            Debug.Log($"Initial Transform Position: {transform.position}");
+            //Debug.Log($"Initial Transform Position: {transform.position}");
 
             // Debug: Print loaded trajectory points
             foreach (var point in trajectoryPoints)
             {
-                Debug.Log($"TimeToLanding: {point.TimeToLanding}, Position: {point.Position}");
+                //Debug.Log($"TimeToLanding: {point.TimeToLanding}, Position: {point.Position}");
             }
         }
         else
@@ -98,11 +98,11 @@ public class TrajectoryGenerator : MonoBehaviour
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
                 // Debug: Print interpolated position, time to landing, and altitude
-                Debug.Log($"Interpolated Position (Raw): {interpolatedPosition / scaleFactor}");
-                Debug.Log($"Interpolated Position (Scaled): {interpolatedPosition}");
-                Debug.Log($"Transform Position: {transform.position}");
-                Debug.Log($"Time to Landing: {timeToLanding}");
-                Debug.Log($"Altitude: {altitude}");
+                //Debug.Log($"Interpolated Position (Raw): {interpolatedPosition / scaleFactor}");
+                //Debug.Log($"Interpolated Position (Scaled): {interpolatedPosition}");
+                //Debug.Log($"Transform Position: {transform.position}");
+                //Debug.Log($"Time to Landing: {timeToLanding}");
+                //Debug.Log($"Altitude: {altitude}");
             }
             else if (currentTimeToLanding <= 0)
             {
@@ -117,11 +117,11 @@ public class TrajectoryGenerator : MonoBehaviour
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
                 // Debug: Print final position, time to landing, and altitude
-                Debug.Log($"Final Position (Raw): {trajectoryPoints[trajectoryPoints.Count - 1].Position}");
-                Debug.Log($"Final Position (Scaled): {trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor}");
-                Debug.Log($"Transform Position: {transform.position}");
-                Debug.Log($"Time to Landing: {timeToLanding}");
-                Debug.Log($"Altitude: {altitude}");
+                //Debug.Log($"Final Position (Raw): {trajectoryPoints[trajectoryPoints.Count - 1].Position}");
+                //Debug.Log($"Final Position (Scaled): {trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor}");
+                //Debug.Log($"Transform Position: {transform.position}");
+                //Debug.Log($"Time to Landing: {timeToLanding}");
+                //Debug.Log($"Altitude: {altitude}");
             }
 
             // Ensure time to landing is non-negative
