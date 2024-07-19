@@ -6022,41 +6022,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c2d946f8c666943bc6a601007fcc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Altitude_Km: 0
+  Landing_Site_Distance_Km: 0
+  Temperature_Of_Atmosphere_C: 0
+  Temperature_Of_Lander_C: 0
+  Pressure_Of_Atmosphere_Pa: 0
+  Pressure_On_Lander_Pa: 0
+  Density_Kg_m3: 0
+  Drag_Force_N: 0
+  Drag_Coefficient: 0
+  Diameter_m: 0
+  Frontal_Area_m2: 0
+  Weight_Force_N: 0
+  Heat_Gained_J: 0
+  S_Constant: 0
+  M_Mach_Number: 0
+  Ratio_Of_The_Specific_Heats: 0
+  Accommodation_Coefficient: 0
+  Specific_Heat: 0
+  Lander_Mass_Kg: 0
+  Adiabatic_Constant: 0
+  Gravitational_Acceleration_m_s2: 0
+  Timer_s: 0
+  Angular_Velocity_Magnitude: 0
+  currentAcceleration: {x: 0, y: 0, z: 0}
+  Magnetometer_Vector: {x: 0, y: 0, z: 0}
+  Position_Vector: {x: 0, y: 0, z: 0}
+  lasrEulerAngle: {x: 0, y: 0, z: 0}
+  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
   Lander: {fileID: 919132148794194647}
   Mars: {fileID: 11955143}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  Velocity_Vector: {x: 0, y: 0, z: 0}
-  Last_Velocity_Vector: {x: 0, y: 0, z: 0}
-  Acceleration_Vector: {x: 0, y: 0, z: 0}
-  Euler_Angles: {x: 0, y: 0, z: 0}
-  Angular_Velocity: {x: 0, y: 0, z: 0}
+  serverHost: 127.0.0.1
+  serverPort: 25001
 --- !u!54 &713672591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37300,12 +37299,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ace94e79daf6543a34c07457e6cb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 1000
 --- !u!1 &927892832315625151
 GameObject:
   m_ObjectHideFlags: 0
