@@ -3,8 +3,10 @@ using UnityEngine;
 public class ScaledAirResistence : MonoBehaviour
 {
     [Header("Aerodynamic Data")]
-    [SerializeField] private float[] dragCoefficients = { 0.80859406f, 0.415849512f, 0.407191385f, 0.01619733f, 0.002796626f, -0.10439445f, -0.12627868f, -0.424713034f, 0.06799861f };
-    [SerializeField] private float[] liftCoefficients = { 0.737856941f, 0.61829372f, 0.407191385f, 0.002516561f, 0.027966258f, 0.02270282f, -0.36785271f, -0.603465643f, -0.6172964f };
+    [SerializeField] private float[] dragCoefficients = { 0.80859406f, 0.415849512f, 0.407191385f, 
+    0.01619733f, 0.002796626f, -0.10439445f, -0.12627868f, -0.424713034f, 0.06799861f };
+    [SerializeField] private float[] liftCoefficients = { 0.737856941f, 0.61829372f, 0.407191385f, 
+    0.002516561f, 0.027966258f, 0.02270282f, -0.36785271f, -0.603465643f, -0.6172964f };
     [SerializeField] private float[] aoa = { 45f, 30f, 15f, -5f, -5f, -5f, -15f, -30f, -45f };
 
     [Header("Simulation Variables")]
@@ -79,7 +81,8 @@ public class ScaledAirResistence : MonoBehaviour
         landerRigidbody.AddForce(liftDirection * liftForce, ForceMode.Force);
 
         // Calculate dynamic rotation speed based on environmental factors and Rigidbody's angular drag
-        float dynamicRotationSpeed = CalculateDynamicRotationSpeed(airDensity, velocityMagnitude, dragCoefficient, landerRigidbody.angularDrag);
+        float dynamicRotationSpeed = CalculateDynamicRotationSpeed(airDensity, velocityMagnitude, 
+        dragCoefficient, landerRigidbody.angularDrag);
 
         // Apply torque for rotation to align with the velocity vector
         Vector3 torqueDirection = Vector3.Cross(transform.forward, velocityVector).normalized;
@@ -95,11 +98,13 @@ public class ScaledAirResistence : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + dragDirection * dragForce, Color.red);
     }
 
-    float CalculateDynamicRotationSpeed(float airDensity, float velocityMagnitude, float dragCoefficient, float angularDrag)
+    float CalculateDynamicRotationSpeed(float airDensity, float velocityMagnitude, float dragCoefficient, 
+    float angularDrag)
     {
         // Example calculation for dynamic rotation speed
         // Adjust the formula based on your simulation needs
-        return Mathf.Clamp(airDensity * velocityMagnitude * dragCoefficient / (1 + angularDrag), minRotationSpeed, maxRotationSpeed);
+        return Mathf.Clamp(airDensity * velocityMagnitude * dragCoefficient / (1 + angularDrag),
+         minRotationSpeed, maxRotationSpeed);
     }
 
     float CalculateAngleOfAttack(Vector3 velocityVector)
@@ -180,7 +185,8 @@ public class ScaledAirResistence : MonoBehaviour
         Vector3 landerVelocity = landerRigidbody.velocity;
         if (landerVelocity.magnitude < 0.01f)
         {
-            landerVelocity = transform.forward; // Use a default forward direction if velocity is near zero
+            landerVelocity = transform.forward; 
+            // Use a default forward direction if velocity is near zero
         }
 
         Vector3 landerVelocityNormalized = landerVelocity.normalized;

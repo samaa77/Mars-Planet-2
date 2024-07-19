@@ -170,16 +170,19 @@ public class SensorsSender : MonoBehaviour
             client.Connect(sensorsServerHost, sensorsServerPort);
 
             // Prepare data to send and Convert the Scale to a string format
-            string dataToSend = '\n' + "currentAcceleration [" + currentAcceleration.x + "," + currentAcceleration.y + "," + currentAcceleration.z + "]" + '\n' +
-                "Magnetometer_Vector [" + Magnetometer_Vector.x + "," + Magnetometer_Vector.y + "," + Magnetometer_Vector.z + "]" + '\n' +
-                "currentChangeRateOfEulerAngel [" + currentChangeRateOfEulerAngel.x + "," + currentChangeRateOfEulerAngel.y + "," + currentChangeRateOfEulerAngel.z + "]" + '\n' +
+            string dataToSend = '\n' + "Acceleration [" + currentAcceleration.x + "," + currentAcceleration.y + "," + currentAcceleration.z + "]" + '\n' +
+                "Magnetometer Vector [" + Magnetometer_Vector.x + "," + Magnetometer_Vector.y + "," + Magnetometer_Vector.z + "]" + '\n' +
+                "Change Rate of Euler Angels [" + currentChangeRateOfEulerAngel.x + "," + currentChangeRateOfEulerAngel.y + "," + currentChangeRateOfEulerAngel.z + "]" + '\n' +
                 "Current Euler Angles [" + Lander.transform.eulerAngles.x + "," + Lander.transform.eulerAngles.y + "," + Lander.transform.eulerAngles.z + "]";
             
             // Send the data
             NetworkStream stream = client.GetStream();
             byte[] data = Encoding.UTF8.GetBytes(dataToSend);
             stream.Write(data, 0, data.Length);
-            Debug.Log("Sent data to Python: ");
+            Debug.Log("Sent data to Client: " + '\n' + "Acceleration " + currentAcceleration + '\n' +
+                "Magnetometer Vector " + Magnetometer_Vector + '\n' +
+                "Change Rate of Euler Angels " + currentChangeRateOfEulerAngel + '\n' +
+                "Euler Angles " + Lander.transform.eulerAngles );
 
             // Increment the counter and print the count
             dataSentCount++;

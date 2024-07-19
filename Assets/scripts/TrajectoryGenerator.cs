@@ -43,13 +43,6 @@ public class TrajectoryGenerator : MonoBehaviour
             startTime = Time.time;
             currentSegment = 0;
 
-            // Debug: Print initial Mars position
-            //Debug.Log($"Initial Mars Position: {mars.position}");
-
-            // Debug: Print first trajectory point raw and scaled
-            //Debug.Log($"First Trajectory Point (Raw): {trajectoryPoints[0].Position}");
-            //Debug.Log($"First Trajectory Point (Scaled): {trajectoryPoints[0].Position * scaleFactor}");
-
             // Set initial position based on the first trajectory point
             transform.position = mars.position + trajectoryPoints[0].Position * scaleFactor;
 
@@ -97,12 +90,6 @@ public class TrajectoryGenerator : MonoBehaviour
                 timeToLanding = currentTimeToLanding;
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
-                // Debug: Print interpolated position, time to landing, and altitude
-                //Debug.Log($"Interpolated Position (Raw): {interpolatedPosition / scaleFactor}");
-                //Debug.Log($"Interpolated Position (Scaled): {interpolatedPosition}");
-                //Debug.Log($"Transform Position: {transform.position}");
-                //Debug.Log($"Time to Landing: {timeToLanding}");
-                //Debug.Log($"Altitude: {altitude}");
             }
             else if (currentTimeToLanding <= 0)
             {
@@ -116,12 +103,6 @@ public class TrajectoryGenerator : MonoBehaviour
                 timeToLanding = 0;
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
-                // Debug: Print final position, time to landing, and altitude
-                //Debug.Log($"Final Position (Raw): {trajectoryPoints[trajectoryPoints.Count - 1].Position}");
-                //Debug.Log($"Final Position (Scaled): {trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor}");
-                //Debug.Log($"Transform Position: {transform.position}");
-                //Debug.Log($"Time to Landing: {timeToLanding}");
-                //Debug.Log($"Altitude: {altitude}");
             }
 
             // Ensure time to landing is non-negative
@@ -139,16 +120,13 @@ public class TrajectoryGenerator : MonoBehaviour
         {
             using (var reader = new StreamReader(filePath))
             {
-                // Skip header line
-                reader.ReadLine();
-
+                reader.ReadLine(); // Skip header line
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
                     var values = line.Split(',');
 
                     if (values.Length < 4) continue;
-
                     if (float.TryParse(values[0], out float timeToLanding) &&
                         float.TryParse(values[1], out float x) &&
                         float.TryParse(values[2], out float y) &&
@@ -168,7 +146,6 @@ public class TrajectoryGenerator : MonoBehaviour
         {
             Debug.LogError("Error parsing CSV file: " + e.Message);
         }
-
         return points;
     }
 

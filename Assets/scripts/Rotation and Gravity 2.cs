@@ -6,10 +6,11 @@ public class OrbitalMechanics2 : MonoBehaviour
     public Transform mars;
     public float realMarsMass = 6.4171e23f; // Actual mass of Mars in kg
     public float realLanderMass = 3152.5f; // Actual mass of the lander in kg
-    public Vector3 realInitialVelocity = new Vector3(2808.78515445f, 408.75889788f, 3678.46907861f); // Actual initial velocity in m/s
+
+    // Actual initial velocity in m/s
+    public Vector3 realInitialVelocity = new Vector3(2808.78515445f, 408.75889788f, 3678.46907861f);
     private float TorqueStrength = 15f; // Adjust this value as needed
     public float scalingFactor = 100f; // Adjust this value as needed
-
     public Vector3 currentVelocity; // For monitoring velocity changes
 
     // Private variables for internal use
@@ -39,7 +40,6 @@ public class OrbitalMechanics2 : MonoBehaviour
         // Update current velocity for monitoring
         currentVelocity = _rigidbody.velocity;
     }
-
     void ApplyGravity()
     {
         Vector3 distance = mars.position - transform.position;
@@ -50,7 +50,6 @@ public class OrbitalMechanics2 : MonoBehaviour
         // Apply the gravity as an acceleration
         _rigidbody.AddForce(force, ForceMode.Acceleration);
     }
-
     void ApplyTorque()
     {
         // Calculate the torque based on the object's position relative to the center of mass
@@ -61,7 +60,6 @@ public class OrbitalMechanics2 : MonoBehaviour
         // Apply the torque to the Rigidbody
         _rigidbody.AddTorque(torque, ForceMode.Force);
     }
-
     // Function to scale physical quantities for the simulation
     private void ScalePhysicsQuantities()
     {

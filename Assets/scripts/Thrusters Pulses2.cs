@@ -14,13 +14,15 @@ public class ThrustersPulses2 : MonoBehaviour
     TcpListener thrusterListener;
     TcpClient thrusterClient;
 
-    private Vector3[] thrusterDirections = { new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1) };    // Array to store the thruster directions
+    // Array to store the thruster directions
+    private Vector3[] thrusterDirections = { new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1) };    
     public float GroupedMagnitude = 1.0f; // Multiplier for all thrusters' magnitudes    
     public float[] thrusterMagnitudes = new float[4]; // Array to store the thruster magnitudes
 
     public GameObject[] thrusterLocations; // Array to store the thruster locations
 
-    private Vector3[] rotationAngles = { new Vector3(30, -28, 4), new Vector3(-30, 28, -4), new Vector3(30, 28, -4), new Vector3(-30, -28, 4) };    // Array to store the rotation angles for each thruster
+    // Array to store the rotation angles for each thruster
+    private Vector3[] rotationAngles = { new Vector3(30, -28, 4), new Vector3(-30, 28, -4), new Vector3(30, 28, -4), new Vector3(-30, -28, 4) };    
 
     private Rigidbody Rb;
     private float[] previousThrusterMagnitudes;
@@ -36,7 +38,8 @@ public class ThrustersPulses2 : MonoBehaviour
         // Check if the thrusterLocations array is assigned
         if (thrusterLocations == null || thrusterLocations.Length == 0)
         {
-            Debug.LogError("Thruster locations array not assigned or empty. Please assign the empty objects representing the thruster locations to the thrusterLocations array in the inspector.");
+            Debug.LogError("Thruster locations array not assigned or empty." + '\n' + 
+            "Please assign the empty objects representing the thruster locations to the thrusterLocations array in the inspector.");
             return;
         }
 
@@ -81,10 +84,12 @@ public class ThrustersPulses2 : MonoBehaviour
             Quaternion currentThrusterRotation = transform.rotation * previousThrusterRotations[i];
 
             // Apply the rotated force at the thruster location as an impulse
-            Rb.AddForceAtPosition(currentThrusterRotation * worldSpaceThrusterDirection * scaledMagnitude, thrusterLocations[i].transform.position, ForceMode.Force);
+            Rb.AddForceAtPosition(currentThrusterRotation * worldSpaceThrusterDirection * scaledMagnitude, 
+            thrusterLocations[i].transform.position, ForceMode.Force);
 
             // Draw a ray to visualize the thruster direction
-            Debug.DrawRay(thrusterLocations[i].transform.position, currentThrusterRotation * worldSpaceThrusterDirection * -scaledMagnitude * 5, Color.red, 0.2f);
+            Debug.DrawRay(thrusterLocations[i].transform.position, 
+            currentThrusterRotation * worldSpaceThrusterDirection * -scaledMagnitude * 5, Color.red, 0.2f);
         }
 
         // Check if the pulse duration has elapsed
