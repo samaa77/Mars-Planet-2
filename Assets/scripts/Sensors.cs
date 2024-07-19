@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using System.Net.Sockets;
 using System.Text;
 
 public class Sensors : MonoBehaviour
@@ -87,10 +86,6 @@ public class Sensors : MonoBehaviour
     public GameObject North_Pole;
     public GameObject Landing_Site;
 
-    public string serverHost = "127.0.0.1";
-    public int serverPort = 25001;
-
-
 
     void Start()
     {
@@ -169,35 +164,5 @@ public class Sensors : MonoBehaviour
         Weight_Force_N = Lander_Mass_Kg * Gravitational_Acceleration_m_s2;
         Drag_Force_N = 0.5 * Density_Kg_m3 * Drag_Coefficient * Math.Pow(Velocity_Vector.magnitude, 2) * Frontal_Area_m2;
 
-        // Create a TCP client
-        TcpClient client = new TcpClient();
-
-        try
-        {
-            // Connect to the server
-            client.Connect(serverHost, serverPort);
-
-            // Get the Scale of the object
-
-            // Convert the Scale to a string
-            string dataToSend = '\n' + "currentAcceleration" + currentAcceleration.x + "," + currentAcceleration.y + "," + currentAcceleration.z + '\n' +
-                                "Magnetometer_Vector" + Magnetometer_Vector.x + "," + Magnetometer_Vector.y + "," + Magnetometer_Vector.z + '\n' +
-                                "currentChangeRateOfEulerAngel" + currentChangeRateOfEulerAngel.x + "," + currentChangeRateOfEulerAngel.y + "," + currentChangeRateOfEulerAngel.z;
-
-            // Send the data
-            NetworkStream stream = client.GetStream();
-            byte[] data = Encoding.UTF8.GetBytes(dataToSend);
-            stream.Write(data, 0, data.Length);
-            Debug.Log("Sent data to Python: " + dataToSend);
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError("Error sending data to Python: " + e.Message);
-        }
-        finally
-        {
-            // Close the client
-            client.Close();
-        }
     }
 }

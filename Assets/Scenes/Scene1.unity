@@ -5981,35 +5981,6 @@ MonoBehaviour:
   Mars: {fileID: 11955143}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  currentAcceleration: {x: 0, y: 0, z: 0}
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  lasrEulerAngle: {x: 0, y: 0, z: 0}
-  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
 --- !u!114 &713672585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6054,8 +6025,6 @@ MonoBehaviour:
   Mars: {fileID: 11955143}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  serverHost: 127.0.0.1
-  serverPort: 25001
 --- !u!54 &713672591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37274,7 +37243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42994064eda662f4692eecf00a0944f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: Assets/scripts/lander_positions.csv
+  filePath: Assets/scripts/lander_positions2.csv
   mars: {fileID: 11663335}
   timeToLanding: 0
   altitude: 0

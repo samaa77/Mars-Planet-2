@@ -8,11 +8,11 @@ public class LanderOrientationController : MonoBehaviour
     private float yawInputDuration = 0f;
     private float rollInputDuration = 0f;
 
-    private Vector3 previousRotation;
+    private Vector3 cumulativeRotation;
 
     void Start()
     {
-        previousRotation = transform.eulerAngles;
+        cumulativeRotation = transform.eulerAngles;
     }
 
     void Update()
@@ -68,21 +68,20 @@ public class LanderOrientationController : MonoBehaviour
             rollInputDuration = 0;
         }
 
-        // Apply rotations to the lander object
-        transform.Rotate(pitch * Time.deltaTime, yaw * Time.deltaTime, roll * Time.deltaTime);
+        // Accumulate rotations
+        cumulativeRotation += new Vector3(pitch * Time.deltaTime, yaw * Time.deltaTime, roll * Time.deltaTime);
+
+        // Apply the accumulated rotations to the lander object
+        transform.eulerAngles = cumulativeRotation;
 
         // Log the change in rotation angles if all changes are greater than 5 degrees
-        Vector3 currentRotation = transform.eulerAngles;
-        Vector3 rotationChange = currentRotation - previousRotation;
-
-        if (Mathf.Abs(rotationChange.x) > 5 && Mathf.Abs(rotationChange.y) > 5 && Mathf.Abs(rotationChange.z) > 5)
+        if (Mathf.Abs(pitch) > 5 || Mathf.Abs(yaw) > 5 || Mathf.Abs(roll) > 5)
         {
-            int pitchChange = Mathf.RoundToInt(rotationChange.x);
-            int yawChange = Mathf.RoundToInt(rotationChange.y);
-            int rollChange = Mathf.RoundToInt(rotationChange.z);
+            int pitchChange = Mathf.RoundToInt(pitch * Time.deltaTime);
+            int yawChange = Mathf.RoundToInt(yaw * Time.deltaTime);
+            int rollChange = Mathf.RoundToInt(roll * Time.deltaTime);
 
             Debug.Log($"Rotation Change -> Pitch: {pitchChange}, Yaw: {yawChange}, Roll: {rollChange}");
-            previousRotation = currentRotation;
         }
     }
 }

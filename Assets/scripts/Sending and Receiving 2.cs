@@ -18,74 +18,74 @@ public class SensorsSender : MonoBehaviour
     public GameObject Landing_Site;
 
     //"distance" is for distance between mars and the lander Which is measured by the altimeter sensor
-    public double distance;
-    public float Landing_Site_Distance;
+    private double distance;
+    private float Landing_Site_Distance;
 
     //"i" is for iterations which is for calculating acceleration from calculating the average of the change rate of velocity vector in each frame
-    public float i = 0;
+    private float i = 0;
 
     //"T_int" is for temperature initial which is the temperature of atmosphere in altitude of the lander 
-    public double T_int;
+    private double T_int;
 
     //"T_final" is for Temperature final which is the temperature of the lander resulted from friction between lander and air molecules Which is measured by the temperature sensor
-    public double T_final;
+    private double T_final;
 
     //"Pressure" is for the pressure of the atmosphere in altitude of the lander 
-    public double Pressure;
+    private double Pressure;
 
     //"Pressure_Final" is for Pressure final which is the Pressure of the lander resulted from friction between lander and air molecules Which is measured by the pressure sensor
-    public double Pressure_Final;
+    private double Pressure_Final;
 
     //Density is for mars atmosphere density
-    public double Density;
-    public double Drag_Force;
-    public double Drag_Coefficient;
-    public double Diameter;
-    public double Frontal_Area;
-    public double Weight_Force;
+    private double Density;
+    private double Drag_Force;
+    private double Drag_Coefficient;
+    private double Diameter;
+    private double Frontal_Area;
+    private double Weight_Force;
 
 
     //Q is the amount of heat gained or lost by the lander
-    public double Q;
+    private double Q;
 
     //S is a constant claculated from  Mach number and specific heats of air 
-    public double S;
+    private double S;
 
     //M = vehicle flight Mach number
-    public double M;
+    private double M;
 
     //Y = ratio of the specific heats of air.
-    public double Y;
+    private double Y;
 
     //a = accommodation coefficient (taken as 1.0)
-    public double a;
+    private double a;
 
     // c is the specific heat
-    public double c;
+    private double c;
 
     //m is mass of the lander
-    public double m;
+    private double m;
 
     //𝛾 is the adiabatic constant.
-    public double y;
+    private double y;
 
     //g is gravitational acceleration on Mars
-    public double g;
+    private double g;
 
     //"Time1" is a timer clculate the time from the moment we play the scene   
-    public double Time1;
+    private double Time1;
 
     //Gyro is for angularVelocity magnitude
-    public double Gyro;
+    private double Gyro;
 
-    public Vector3 currentAcceleration;
-    public Vector3 Magnetometer_Vector;
-    public Vector3 Position_Vector;
+    private Vector3 currentAcceleration;
+    private Vector3 Magnetometer_Vector;
+    private Vector3 Position_Vector;
     private Rigidbody rb;
     private Vector3 lastVelocity;
     private Vector3 Velocity_Vector;
-    public Vector3 lasrEulerAngle;
-    public Vector3 currentChangeRateOfEulerAngel;
+    private Vector3 lasrEulerAngle;
+    private Vector3 currentChangeRateOfEulerAngel;
 
     void Start()
     {
