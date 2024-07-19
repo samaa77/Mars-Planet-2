@@ -194,6 +194,8 @@ Transform:
   - {fileID: 1483399934}
   - {fileID: 1883752057}
   - {fileID: 188040968}
+  - {fileID: 970568337}
+  - {fileID: 1095494732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &11955143
@@ -10958,7 +10960,7 @@ GameObject:
   - component: {fileID: 970568336}
   - component: {fileID: 970568335}
   m_Layer: 0
-  m_Name: Atmosphere-Fog 1 (1)
+  m_Name: Atmosphere-Fog 1 (Triggered)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11053,7 +11055,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -11109,8 +11111,8 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
-  moveWithCustomTransform: {fileID: 0}
+  moveWithTransform: 2
+  moveWithCustomTransform: {fileID: 11663335}
   scalingMode: 1
   randomSeed: 0
   InitialModule:
@@ -15768,11 +15770,11 @@ Transform:
   m_GameObject: {fileID: 970568334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23076.74, y: -17620.809, z: 37631.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 11663335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095494729
 GameObject:
@@ -15786,7 +15788,7 @@ GameObject:
   - component: {fileID: 1095494731}
   - component: {fileID: 1095494730}
   m_Layer: 0
-  m_Name: Atmosphere-Fog 1
+  m_Name: 'Atmosphere-Fog 1 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15937,8 +15939,8 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
-  moveWithCustomTransform: {fileID: 0}
+  moveWithTransform: 2
+  moveWithCustomTransform: {fileID: 11663335}
   scalingMode: 1
   randomSeed: 0
   InitialModule:
@@ -18184,7 +18186,7 @@ ParticleSystem:
     randomizePerFrame: 0
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -20596,11 +20598,11 @@ Transform:
   m_GameObject: {fileID: 1095494729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23076.74, y: -17620.809, z: 37631.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 11.65, y: 11.65, z: 11.65}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 11663335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1102881992
 GameObject:
@@ -37140,7 +37142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53d900ec05eea5e4b80654cec4dadd91, type: 3}
   m_Name: 
@@ -37258,7 +37260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lander: {fileID: 919132148794194647}
   mars: {fileID: 11955143}
-  triggerDistance: 36895
+  triggerDistance: 39985
   particleSystemObject: {fileID: 970568334}
   currentDistance: 0
 --- !u!114 &919132148794194657
@@ -47724,8 +47726,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1344792317}
   - {fileID: 768191475}
-  - {fileID: 1095494732}
-  - {fileID: 970568337}
   - {fileID: 11663335}
   - {fileID: 1961022604}
   - {fileID: 1202084529}
