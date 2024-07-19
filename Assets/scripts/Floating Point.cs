@@ -2,32 +2,44 @@ using UnityEngine;
 
 public class FloatingOrigin : MonoBehaviour
 {
-    public float threshold = 500f; // Distance threshold to reset the origin
+    public float threshold = 1000f; // Distance threshold to reset the origin
+    private Vector3 accumulatedOffset = Vector3.zero;
 
     void LateUpdate()
     {
         Vector3 position = transform.position;
 
-        // Check if the position exceeds the threshold
         if (position.magnitude > threshold)
         {
-            // Offset to shift all objects back towards the origin
             Vector3 offset = position;
+            accumulatedOffset += offset;
 
-            // Iterate through all root objects in the scene
             foreach (GameObject obj in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
             {
-                if (obj != gameObject) // Avoid resetting the main spacecraft itself
+                if (obj != gameObject)
                 {
                     obj.transform.position -= offset;
                 }
             }
 
-            // Reset the main object's position
             transform.position = Vector3.zero;
 
-            // If the camera is a child of the spacecraft, you might need to reset its local position
-            Camera.main.transform.localPosition = Vector3.zero;
+            //Debug.Log("Accumulated Offset: " + accumulatedOffset);
         }
+    }
+
+    public Vector3 GetGlobalPosition(Vector3 localPosition)
+    {
+        return localPosition + accumulatedOffset;
+    }
+
+    public Vector3 GetLocalPosition(Vector3 globalPosition)
+    {
+        return globalPosition - accumulatedOffset;
+    }
+
+    public Vector3 GetAccumulatedOffset()
+    {
+        return accumulatedOffset;
     }
 }

@@ -47,12 +47,12 @@ public class TrajectoryGenerator : MonoBehaviour
             transform.position = mars.position + trajectoryPoints[0].Position * scaleFactor;
 
             // Debug: Print initial Lander position
-            //Debug.Log($"Initial Transform Position: {transform.position}");
+            Debug.Log($"Initial Transform Position: {transform.position}");
 
             // Debug: Print loaded trajectory points
             foreach (var point in trajectoryPoints)
             {
-                //Debug.Log($"TimeToLanding: {point.TimeToLanding}, Position: {point.Position}");
+                Debug.Log($"TimeToLanding: {point.TimeToLanding}, Position: {point.Position}");
             }
         }
         else
@@ -90,6 +90,11 @@ public class TrajectoryGenerator : MonoBehaviour
                 timeToLanding = currentTimeToLanding;
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
+                Debug.Log($"Interpolated Position: {interpolatedPosition}");
+                Debug.Log($"Transform Position: {transform.position}");
+                Debug.Log($"Position Relative to Mars: {positionRelativeToMars}");
+                Debug.Log($"Time to Landing: {timeToLanding}");
+                Debug.Log($"Altitude: {altitude}");
             }
             else if (currentTimeToLanding <= 0)
             {
@@ -103,6 +108,11 @@ public class TrajectoryGenerator : MonoBehaviour
                 timeToLanding = 0;
                 altitude = Vector3.Distance(transform.position, mars.position) - marsRadius;
 
+                Debug.Log($"Final Position: {trajectoryPoints[trajectoryPoints.Count - 1].Position * scaleFactor}");
+                Debug.Log($"Transform Position: {transform.position}");
+                Debug.Log($"Position Relative to Mars: {positionRelativeToMars}");
+                Debug.Log($"Time to Landing: {timeToLanding}");
+                Debug.Log($"Altitude: {altitude}");
             }
 
             // Ensure time to landing is non-negative

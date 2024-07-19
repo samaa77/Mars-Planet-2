@@ -10,6 +10,8 @@ public class LanderDistanceTrigger : MonoBehaviour
     private ParticleSystem particles;       // Reference to the Particle System component
     private bool particlesStarted;          // Flag to track if particles have started
 
+    private FloatingOrigin floatingOrigin;  // Reference to the Floating Origin script
+
     [Header("Debugging")]
     [SerializeField] private float currentDistance; // Variable to store the current distance (for display in Inspector)
 
@@ -18,6 +20,8 @@ public class LanderDistanceTrigger : MonoBehaviour
         particles = particleSystemObject.GetComponent<ParticleSystem>();
         particles.Stop(); // Ensure particles start off
         particlesStarted = false;
+
+        floatingOrigin = FindObjectOfType<FloatingOrigin>(); // Get the Floating Origin script
 
         // Initialize currentDistance
         currentDistance = CalculateDistance();
@@ -51,8 +55,12 @@ public class LanderDistanceTrigger : MonoBehaviour
 
     float CalculateDistance()
     {
+        // Get the global positions of the lander and Mars
+        Vector3 landerGlobalPosition = floatingOrigin.GetGlobalPosition(lander.transform.position);
+        Vector3 marsGlobalPosition = floatingOrigin.GetGlobalPosition(mars.transform.position);
+
         // Calculate the distance between lander and Mars
-        float distance = Vector3.Distance(lander.transform.position, mars.transform.position);
+        float distance = Vector3.Distance(landerGlobalPosition, marsGlobalPosition);
         return distance;
     }
 }
