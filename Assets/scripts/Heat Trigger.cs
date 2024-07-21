@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LanderDistanceTrigger : MonoBehaviour
+public class HeatTrigger : MonoBehaviour
 {
     public GameObject lander;               // Reference to the lander GameObject
     public GameObject mars;                 // Reference to the Mars GameObject
@@ -32,6 +32,7 @@ public class LanderDistanceTrigger : MonoBehaviour
     {
         // Calculate the distance between lander and Mars
         currentDistance = CalculateDistance();
+        //Debug.Log("Current Distance: " + currentDistance);
 
         // Activate particle system when within trigger distance
         if (currentDistance <= triggerDistance)
@@ -53,6 +54,16 @@ public class LanderDistanceTrigger : MonoBehaviour
                 Debug.Log("Particle System stopped at distance: " + currentDistance);
             }
         }
+        // Handle the case when the distance is between triggerDistance and stopDistance
+        else if (currentDistance > triggerDistance && currentDistance < stopDistance)
+        {
+            if (particlesStarted)
+            {
+                particles.Stop();
+                particlesStarted = false;
+                Debug.Log("Particle System stopped at distance: " + currentDistance);
+            }
+        }
     }
 
     float CalculateDistance()
@@ -63,6 +74,7 @@ public class LanderDistanceTrigger : MonoBehaviour
 
         // Calculate the distance between lander and Mars
         float distance = Vector3.Distance(landerGlobalPosition, marsGlobalPosition);
+        //Debug.Log("Calculated Distance: " + distance);
         return distance;
     }
 }

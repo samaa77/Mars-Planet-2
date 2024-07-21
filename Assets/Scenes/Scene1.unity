@@ -552,7 +552,7 @@ Transform:
   m_GameObject: {fileID: 171856721}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0043014134, y: -0.66627413, z: -0.003843341, w: 0.7456847}
-  m_LocalPosition: {x: 0.104, y: -0.001, z: 0.02}
+  m_LocalPosition: {x: 0.2744, y: -0.0031, z: -0.0907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -761,7 +761,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -10823,8 +10823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c2d946f8c666943bc6a601007fcc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partToToggle: {fileID: 1383046749}
-  showHeight: 350
   Altitude_Km: 0
   Landing_Site_Distance_Km: 0
   Temperature_Of_Atmosphere_C: 0
@@ -10857,6 +10855,8 @@ MonoBehaviour:
   Mars: {fileID: 11955143}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
+  partToToggle: {fileID: 1383046749}
+  showHeight: 350
 --- !u!54 &713672591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15854,7 +15854,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -20682,7 +20682,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -60300,7 +60300,7 @@ Transform:
   m_GameObject: {fileID: 1961022600}
   serializedVersion: 2
   m_LocalRotation: {x: 0.21786548, y: -0.23715103, z: -0.10213901, w: 0.9412023}
-  m_LocalPosition: {x: -0.011000073, y: 0.09000004, z: -0.15}
+  m_LocalPosition: {x: 0.158, y: 0.069, z: -0.297}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61445,11 +61445,11 @@ GameObject:
   - component: {fileID: 919132148794194653}
   - component: {fileID: 919132148794194655}
   - component: {fileID: 919132148794194656}
-  - component: {fileID: 919132148794194659}
   - component: {fileID: 919132148794194658}
   - component: {fileID: 919132148794194660}
   - component: {fileID: 919132148794194661}
-  - component: {fileID: 919132148794194662}
+  - component: {fileID: 919132148794194659}
+  - component: {fileID: 919132148794194663}
   m_Layer: 0
   m_Name: Mars Lander Updated
   m_TagString: Untagged
@@ -61610,7 +61610,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44c1b71e5e4362840b62eb9be985f355, type: 3}
   m_Name: 
@@ -61651,6 +61651,7 @@ MonoBehaviour:
   lander: {fileID: 919132148794194647}
   mars: {fileID: 11955143}
   triggerDistance: 39985
+  stopDistance: 34000
   particleSystemObject: {fileID: 970568334}
   currentDistance: 0
 --- !u!114 &919132148794194657
@@ -61703,7 +61704,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148794194647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3464371bd3cb5a4fa1f214d98688ca5, type: 3}
   m_Name: 
@@ -61711,6 +61712,7 @@ MonoBehaviour:
   lander: {fileID: 919132148794194647}
   mars: {fileID: 11955143}
   triggerDistance: 39985
+  stopDistance: 37985
   particleSystemObject: {fileID: 225094980}
   currentDistance: 0
 --- !u!82 &919132148794194661
@@ -61809,7 +61811,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &919132148794194662
+--- !u!114 &919132148794194663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61818,11 +61820,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132148794194647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804c4e14550ead9458e11735a11bd28d, type: 3}
+  m_Script: {fileID: 11500000, guid: 49a5abd23f1dda0439c6c7bc0a381c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partToToggle: {fileID: 0}
-  showHeight: -270
+  lander: {fileID: 919132148794194647}
+  mars: {fileID: 11955143}
+  triggerDistance: 39985
+  stopDistance: 37985
+  particleSystemObject: {fileID: 225094980}
+  currentDistance: 0
 --- !u!1 &927892832315625151
 GameObject:
   m_ObjectHideFlags: 0

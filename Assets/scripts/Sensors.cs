@@ -7,9 +7,7 @@ using System.Text;
 
 public class Sensors : MonoBehaviour
 {
-    public GameObject partToToggle;
 
-    public float showHeight = 350;
     // Start is called before the first frame update
 
     //"Distance_Between_2_Centers_Of_Mars_And_Lander(Km)" is for distance between mars and the lander Which is measured by the altimeter sensor
@@ -88,6 +86,9 @@ public class Sensors : MonoBehaviour
     public GameObject Mars;
     public GameObject North_Pole;
     public GameObject Landing_Site;
+    public GameObject partToToggle;
+
+    public float showHeight = 350;
 
 
     void Start()
