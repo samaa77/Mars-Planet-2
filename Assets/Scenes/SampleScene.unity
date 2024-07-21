@@ -579,7 +579,7 @@ Transform:
   m_GameObject: {fileID: 171856721}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0043014134, y: -0.66627413, z: -0.003843341, w: 0.7456847}
-  m_LocalPosition: {x: 0.098, y: -0.0005, z: 0.0317}
+  m_LocalPosition: {x: 0.147, y: -0.001, z: 0.026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5541,6 +5541,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 204472817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &359111576
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 543450652986351725}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1321146498039477110, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5657e666ab35775429eac8cd434fd3ea, type: 2}
+    - target: {fileID: -482133128370353196, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5657e666ab35775429eac8cd434fd3ea, type: 2}
+    - target: {fileID: 919132149155446097, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_Name
+      value: project 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790575196777360314, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790575196777360314, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5657e666ab35775429eac8cd434fd3ea, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1472135624}
+  m_SourcePrefab: {fileID: 100100000, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+--- !u!4 &359111577 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+  m_PrefabInstance: {fileID: 359111576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &467950923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6054,35 +6151,6 @@ MonoBehaviour:
   Mars: {fileID: 697514150}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  currentAcceleration: {x: 0, y: 0, z: 0}
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  lasrEulerAngle: {x: 0, y: 0, z: 0}
-  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
 --- !u!114 &713672585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6095,41 +6163,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c2d946f8c666943bc6a601007fcc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Altitude_Km: 0
+  Landing_Site_Distance_Km: 0
+  Temperature_Of_Atmosphere_C: 0
+  Temperature_Of_Lander_C: 0
+  Pressure_Of_Atmosphere_Pa: 0
+  Pressure_On_Lander_Pa: 0
+  Density_Kg_m3: 0
+  Drag_Force_N: 0
+  Drag_Coefficient: 0
+  Diameter_m: 0
+  Frontal_Area_m2: 0
+  Weight_Force_N: 0
+  Heat_Gained_J: 0
+  S_Constant: 0
+  M_Mach_Number: 0
+  Ratio_Of_The_Specific_Heats: 0
+  Accommodation_Coefficient: 0
+  Specific_Heat: 0
+  Lander_Mass_Kg: 0
+  Adiabatic_Constant: 0
+  Gravitational_Acceleration_m_s2: 0
+  Timer_s: 0
+  Angular_Velocity_Magnitude: 0
+  currentAcceleration: {x: 0, y: 0, z: 0}
+  Magnetometer_Vector: {x: 0, y: 0, z: 0}
+  Position_Vector: {x: 0, y: 0, z: 0}
+  lasrEulerAngle: {x: 0, y: 0, z: 0}
+  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
   Lander: {fileID: 919132148794194647}
   Mars: {fileID: 697514150}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  Velocity_Vector: {x: 0, y: 0, z: 0}
-  Last_Velocity_Vector: {x: 0, y: 0, z: 0}
-  Acceleration_Vector: {x: 0, y: 0, z: 0}
-  Euler_Angles: {x: 0, y: 0, z: 0}
-  Angular_Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &713672587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21070,41 +21135,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c2d946f8c666943bc6a601007fcc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Altitude_Km: 0
+  Landing_Site_Distance_Km: 0
+  Temperature_Of_Atmosphere_C: 0
+  Temperature_Of_Lander_C: 0
+  Pressure_Of_Atmosphere_Pa: 0
+  Pressure_On_Lander_Pa: 0
+  Density_Kg_m3: 0
+  Drag_Force_N: 0
+  Drag_Coefficient: 0
+  Diameter_m: 0
+  Frontal_Area_m2: 0
+  Weight_Force_N: 0
+  Heat_Gained_J: 0
+  S_Constant: 0
+  M_Mach_Number: 0
+  Ratio_Of_The_Specific_Heats: 0
+  Accommodation_Coefficient: 0
+  Specific_Heat: 0
+  Lander_Mass_Kg: 0
+  Adiabatic_Constant: 0
+  Gravitational_Acceleration_m_s2: 0
+  Timer_s: 0
+  Angular_Velocity_Magnitude: 0
+  currentAcceleration: {x: 0, y: 0, z: 0}
+  Magnetometer_Vector: {x: 0, y: 0, z: 0}
+  Position_Vector: {x: 0, y: 0, z: 0}
+  lasrEulerAngle: {x: 0, y: 0, z: 0}
+  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
   Lander: {fileID: 919132148400589127}
   Mars: {fileID: 697514150}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  Velocity_Vector: {x: 0, y: 0, z: 0}
-  Last_Velocity_Vector: {x: 0, y: 0, z: 0}
-  Acceleration_Vector: {x: 0, y: 0, z: 0}
-  Euler_Angles: {x: 0, y: 0, z: 0}
-  Angular_Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &1392653337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21123,35 +21185,6 @@ MonoBehaviour:
   Mars: {fileID: 0}
   North_Pole: {fileID: 0}
   Landing_Site: {fileID: 0}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  currentAcceleration: {x: 0, y: 0, z: 0}
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  lasrEulerAngle: {x: 0, y: 0, z: 0}
-  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
 --- !u!114 &1392653338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21435,6 +21468,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1929609012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1472135623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ec2ca978aa2f1741b43780349951a60, type: 3}
+  m_PrefabInstance: {fileID: 359111576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1472135624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472135623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f0cd63aa3628a439417bd6908ac2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parachuteMaterial: {fileID: 2100000, guid: 5657e666ab35775429eac8cd434fd3ea, type: 2}
 --- !u!4 &1483399934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ee4a35261634b924789b289e03b2ad4e, type: 3}
@@ -31551,7 +31602,7 @@ Transform:
   m_GameObject: {fileID: 1961022600}
   serializedVersion: 2
   m_LocalRotation: {x: 0.040472902, y: -0.11722057, z: 0.0051525547, w: 0.9922675}
-  m_LocalPosition: {x: -0.0159, y: 0.0079, z: -0.0769}
+  m_LocalPosition: {x: -0.02, y: 0.01, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32954,8 +33005,8 @@ Transform:
   m_GameObject: {fileID: 919132148794194647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 204472817}
@@ -32979,6 +33030,7 @@ Transform:
   - {fileID: 5612786134668100658}
   - {fileID: 5834270484629102736}
   - {fileID: 5948371335786865611}
+  - {fileID: 359111577}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653108149883
@@ -34281,35 +34333,6 @@ MonoBehaviour:
   Mars: {fileID: 697514150}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  currentAcceleration: {x: 0, y: 0, z: 0}
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  lasrEulerAngle: {x: 0, y: 0, z: 0}
-  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
 --- !u!114 &919132148580435148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34357,41 +34380,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c2d946f8c666943bc6a601007fcc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Altitude_Km: 0
+  Landing_Site_Distance_Km: 0
+  Temperature_Of_Atmosphere_C: 0
+  Temperature_Of_Lander_C: 0
+  Pressure_Of_Atmosphere_Pa: 0
+  Pressure_On_Lander_Pa: 0
+  Density_Kg_m3: 0
+  Drag_Force_N: 0
+  Drag_Coefficient: 0
+  Diameter_m: 0
+  Frontal_Area_m2: 0
+  Weight_Force_N: 0
+  Heat_Gained_J: 0
+  S_Constant: 0
+  M_Mach_Number: 0
+  Ratio_Of_The_Specific_Heats: 0
+  Accommodation_Coefficient: 0
+  Specific_Heat: 0
+  Lander_Mass_Kg: 0
+  Adiabatic_Constant: 0
+  Gravitational_Acceleration_m_s2: 0
+  Timer_s: 0
+  Angular_Velocity_Magnitude: 0
+  currentAcceleration: {x: 0, y: 0, z: 0}
+  Magnetometer_Vector: {x: 0, y: 0, z: 0}
+  Position_Vector: {x: 0, y: 0, z: 0}
+  lasrEulerAngle: {x: 0, y: 0, z: 0}
+  currentChangeRateOfEulerAngel: {x: 0, y: 0, z: 0}
   Lander: {fileID: 919132148580435137}
   Mars: {fileID: 697514150}
   North_Pole: {fileID: 1883752056}
   Landing_Site: {fileID: 188040967}
-  distance: 0
-  Landing_Site_Distance: 0
-  i: 0
-  T_int: 0
-  T_final: 0
-  Pressure: 0
-  Pressure_Final: 0
-  Density: 0
-  Drag_Force: 0
-  Drag_Coefficient: 0
-  Diameter: 0
-  Frontal_Area: 0
-  Weight_Force: 0
-  Q: 0
-  S: 0
-  M: 0
-  Y: 0
-  a: 0
-  c: 0
-  m: 0
-  y: 0
-  g: 0
-  Time1: 0
-  Gyro: 0
-  Magnetometer_Vector: {x: 0, y: 0, z: 0}
-  Position_Vector: {x: 0, y: 0, z: 0}
-  Velocity_Vector: {x: 0, y: 0, z: 0}
-  Last_Velocity_Vector: {x: 0, y: 0, z: 0}
-  Acceleration_Vector: {x: 0, y: 0, z: 0}
-  Euler_Angles: {x: 0, y: 0, z: 0}
-  Angular_Velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &919132148794194647
 GameObject:
   m_ObjectHideFlags: 0
@@ -34410,6 +34430,7 @@ GameObject:
   - component: {fileID: 919132148794194648}
   - component: {fileID: 919132148794194649}
   - component: {fileID: 919132148794194650}
+  - component: {fileID: 919132148794194651}
   m_Layer: 0
   m_Name: Mars Lander Updated
   m_TagString: Untagged
@@ -34481,6 +34502,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1354445856614592872, guid: eeb008dac0d8f5744acc72509fefd02e, type: 3}
+--- !u!114 &919132148794194651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148794194647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804c4e14550ead9458e11735a11bd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partToToggle: {fileID: 1472135623}
+  showHeight: -270
 --- !u!23 &921028512835843871
 MeshRenderer:
   m_ObjectHideFlags: 0
