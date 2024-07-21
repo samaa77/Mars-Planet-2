@@ -35,7 +35,7 @@ public class HeatTrigger : MonoBehaviour
         //Debug.Log("Current Distance: " + currentDistance);
 
         // Activate particle system when within trigger distance
-        if (currentDistance <= triggerDistance)
+        if (currentDistance >= stopDistance && currentDistance <= triggerDistance)
         {
             if (!particlesStarted)
             {
@@ -45,7 +45,7 @@ public class HeatTrigger : MonoBehaviour
             }
         }
         // Stop particle system when it exceeds the stop distance
-        else if (currentDistance >= stopDistance)
+        else 
         {
             if (particlesStarted)
             {
@@ -54,16 +54,7 @@ public class HeatTrigger : MonoBehaviour
                 Debug.Log("Particle System stopped at distance: " + currentDistance);
             }
         }
-        // Handle the case when the distance is between triggerDistance and stopDistance
-        else if (currentDistance > triggerDistance && currentDistance < stopDistance)
-        {
-            if (particlesStarted)
-            {
-                particles.Stop();
-                particlesStarted = false;
-                Debug.Log("Particle System stopped at distance: " + currentDistance);
-            }
-        }
+
     }
 
     float CalculateDistance()

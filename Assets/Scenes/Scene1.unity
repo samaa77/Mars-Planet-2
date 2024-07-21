@@ -755,7 +755,7 @@ ParticleSystem:
   m_GameObject: {fileID: 225094980}
   serializedVersion: 8
   lengthInSec: 10
-  simulationSpeed: 0.3
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -30470,7 +30470,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1276163405}
   serializedVersion: 8
   lengthInSec: 10
-  simulationSpeed: 1
+  simulationSpeed: 7
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -45586,7 +45586,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1802384882}
   serializedVersion: 8
   lengthInSec: 10
-  simulationSpeed: 1
+  simulationSpeed: 7
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -50501,7 +50501,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1840978127}
   serializedVersion: 8
   lengthInSec: 10
-  simulationSpeed: 1
+  simulationSpeed: 7
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -55486,7 +55486,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1960127433}
   serializedVersion: 8
   lengthInSec: 10
-  simulationSpeed: 1
+  simulationSpeed: 7
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -61826,7 +61826,7 @@ MonoBehaviour:
   lander: {fileID: 919132148794194647}
   mars: {fileID: 11955143}
   triggerDistance: 39985
-  stopDistance: 37985
+  stopDistance: 38500
   particleSystemObject: {fileID: 225094980}
   currentDistance: 0
 --- !u!1 &927892832315625151
