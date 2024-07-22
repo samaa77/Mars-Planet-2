@@ -140,13 +140,20 @@ public class ScaledThrustersPulses : MonoBehaviour
         {
             try
             {
-                thrusterClient = thrusterListener.AcceptTcpClient();
-                Thread readDataThread = new Thread(ReadDataFromClient);
-                readDataThread.Start();
+                // Check for pending connection to avoid blocking
+                if (thrusterListener.Pending())
+                {
+                    thrusterClient = thrusterListener.AcceptTcpClient();
+                    Thread readDataThread = new Thread(ReadDataFromClient);
+                    readDataThread.Start();
+                }
             }
             catch (Exception ex)
             {
-                Debug.LogError("Error in ListenForThrusters: " + ex.Message);
+                if (isRunning)
+                {
+                    Debug.LogError("Error in ListenForThrusters: " + ex.Message);
+                }
             }
         }
     }
@@ -182,7 +189,10 @@ public class ScaledThrustersPulses : MonoBehaviour
             }
             catch (Exception ex)
             {
-                Debug.LogError("Error in ReadDataFromClient: " + ex.Message);
+                if (isRunning)
+                {
+                    Debug.LogError("Error in ReadDataFromClient: " + ex.Message);
+                }
             }
         }
     }
