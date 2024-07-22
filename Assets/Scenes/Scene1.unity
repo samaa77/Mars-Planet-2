@@ -61617,13 +61617,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrusterConnectionIP: 127.0.0.1
   thrusterConnectionPort: 25001
-  GroupedMagnitude: 1
+  GroupedMagnitude: 0
   thrusterMagnitudes:
   - 1
   - 1
   - 1
   - 1
-  debug: 1
+  debug: 0
   effectsEnabled: 1
   thrusterLocations:
   - {fileID: 1915776476}
@@ -61635,7 +61635,7 @@ MonoBehaviour:
   - {fileID: 1840978130}
   - {fileID: 1960127436}
   - {fileID: 1802384883}
-  pulseDuration: 0.1
+  pulseDuration: 1
 --- !u!114 &919132148794194656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61666,7 +61666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42994064eda662f4692eecf00a0944f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: Assets/scripts/lander_positions2.csv
+  filePath: Assets/scripts/lander_positions.csv
   mars: {fileID: 11663335}
   timeToLanding: 0
   altitude: 0

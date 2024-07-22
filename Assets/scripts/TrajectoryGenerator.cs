@@ -34,7 +34,6 @@ public class TrajectoryGenerator : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Start method called");
         trajectoryPoints = LoadTrajectoryPointsFromCSV(filePath);
         trajectoryPoints = FilterTrajectoryPoints(trajectoryPoints); // Filter points to ensure altitude decreases
 
@@ -45,15 +44,6 @@ public class TrajectoryGenerator : MonoBehaviour
 
             // Set initial position based on the first trajectory point
             transform.position = mars.position + trajectoryPoints[0].Position * scaleFactor;
-
-            // Debug: Print initial Lander position
-            //Debug.Log($"Initial Transform Position: {transform.position}");
-
-            // Debug: Print loaded trajectory points
-            foreach (var point in trajectoryPoints)
-            {
-                //Debug.Log($"TimeToLanding: {point.TimeToLanding}, Position: {point.Position}");
-            }
         }
         else
         {
@@ -61,7 +51,7 @@ public class TrajectoryGenerator : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (trajectoryPoints != null && trajectoryPoints.Count > 0)
         {
