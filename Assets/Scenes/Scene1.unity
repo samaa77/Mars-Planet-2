@@ -193,7 +193,6 @@ Transform:
   - {fileID: 964063818}
   - {fileID: 1483399934}
   - {fileID: 1883752057}
-  - {fileID: 188040968}
   - {fileID: 970568337}
   - {fileID: 1095494732}
   m_Father: {fileID: 0}
@@ -247,16 +246,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59642319}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalRotation: {x: -0.08384691, y: 0.21598193, z: -0.038039345, w: 0.9720466}
+  m_LocalPosition: {x: 0, y: 0, z: -35.6}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 543450652986351725}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -8.428, y: 25.526, z: -6.395}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2, y: 0}
+  m_AnchoredPosition: {x: -20.1, y: -4.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59642321
@@ -615,11 +614,11 @@ Transform:
   m_GameObject: {fileID: 188040967}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.96964633, y: 0.3227191, z: -0.21047421}
-  m_LocalScale: {x: 0.00029502876, y: 0.00029502876, z: 0.00029502876}
+  m_LocalPosition: {x: 9789.424, y: -6682.245, z: 30497.086}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 11663335}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204472816
 GameObject:
@@ -10341,7 +10340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55945fb0268c37a4581fb417a2de6b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 80
+  delayTime: 200
 --- !u!4 &275031387
 Transform:
   m_ObjectHideFlags: 0
@@ -16074,7 +16073,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.7686275, b: 0.54901963, a: 1}
+      maxColor: {r: 1, g: 0.7850348, b: 0.581, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -40655,8 +40654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 9c226ec000a71fa47a49e4afd70f3032, type: 3}
-  delay: 20
-  duration: 50
+  delay: 56
+  duration: 70
 --- !u!82 &1629146399
 AudioSource:
   m_ObjectHideFlags: 0
@@ -72295,6 +72294,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1344792317}
   - {fileID: 768191475}
+  - {fileID: 188040968}
   - {fileID: 11663335}
   - {fileID: 1961022604}
   - {fileID: 1202084529}
