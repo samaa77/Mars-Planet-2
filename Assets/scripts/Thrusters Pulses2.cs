@@ -1,25 +1,17 @@
 using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
+using System.Collections;
 using UnityEngine;
-using System.Threading;
 
 public class ThrustersPulses2 : MonoBehaviour
 {
     // Thruster control variables
-    Thread thrusterThread;
-    public string thrusterConnectionIP = "127.0.0.1";
-    public int thrusterConnectionPort = 25001;
-    TcpListener thrusterListener;
-    TcpClient thrusterClient;
-
     // Array to store the thruster directions
     private Vector3[] thrusterDirections = { new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1), new Vector3(0, 0, 1) };    
     public float GroupedMagnitude = 1.0f; // Multiplier for all thrusters' magnitudes    
     public float[] thrusterMagnitudes = new float[4]; // Array to store the thruster magnitudes
 
     public GameObject[] thrusterLocations; // Array to store the thruster locations
+    public ParticleSystem[] thrusterEffects;
 
     // Array to store the rotation angles for each thruster
     private Vector3[] rotationAngles = { new Vector3(30, -28, 4), new Vector3(-30, 28, -4), new Vector3(30, 28, -4), new Vector3(-30, -28, 4) };    
@@ -33,6 +25,13 @@ public class ThrustersPulses2 : MonoBehaviour
 
     private float pulseStartTime; // Time when the pulse started
 
+    private float[] possibleMagnitudes = { 0f, 151.25f, 302.5f }; // Possible magnitudes for thrusters
+
+    // Additional variables for debugging and effects control
+    public bool debug = true;
+    public bool effectsEnabled = true;
+    private float maxForce = 302.5f;
+
     void Start()
     {
         // Check if the thrusterLocations array is assigned
@@ -40,6 +39,13 @@ public class ThrustersPulses2 : MonoBehaviour
         {
             Debug.LogError("Thruster locations array not assigned or empty." + '\n' + 
             "Please assign the empty objects representing the thruster locations to the thrusterLocations array in the inspector.");
+            return;
+        }
+
+        // Validate thruster effects
+        if (thrusterEffects == null || thrusterEffects.Length != thrusterLocations.Length)
+        {
+            Debug.LogError("Thruster effects array not assigned or does not match the number of thrusters.");
             return;
         }
 
@@ -53,13 +59,8 @@ public class ThrustersPulses2 : MonoBehaviour
             previousThrusterRotations[i] = Quaternion.Euler(rotationAngles[i]);
         }
 
-        // Create a TcpListener to listen for incoming connections on the specified port
-        thrusterListener = new TcpListener(IPAddress.Parse(thrusterConnectionIP), thrusterConnectionPort);
-        thrusterListener.Start();
-
-        // Start a thread to listen for incoming connections and read data from the client
-        thrusterThread = new Thread(ListenForThrusters);
-        thrusterThread.Start();
+        // Start a coroutine to set random thruster magnitudes
+        StartCoroutine(SetRandomThrusterMagnitudes());
     }
 
     void FixedUpdate()
@@ -87,9 +88,27 @@ public class ThrustersPulses2 : MonoBehaviour
             Rb.AddForceAtPosition(currentThrusterRotation * worldSpaceThrusterDirection * scaledMagnitude, 
             thrusterLocations[i].transform.position, ForceMode.Force);
 
-            // Draw a ray to visualize the thruster direction
-            Debug.DrawRay(thrusterLocations[i].transform.position, 
-            currentThrusterRotation * worldSpaceThrusterDirection * -scaledMagnitude * 5, Color.red, 0.2f);
+            // Debug visualization of thruster direction
+            if (debug)
+            {
+                Debug.DrawRay(thrusterLocations[i].transform.position, currentThrusterRotation * worldSpaceThrusterDirection * -scaledMagnitude * 5, Color.red, 0.2f);
+            }
+
+            // Activate or deactivate thruster effects based on force
+            if (effectsEnabled && thrusterMagnitudes[i] > 0.1f * maxForce)
+            {
+                if (!thrusterEffects[i].isPlaying)
+                {
+                    thrusterEffects[i].Play();
+                }
+            }
+            else
+            {
+                if (thrusterEffects[i].isPlaying)
+                {
+                    thrusterEffects[i].Stop();
+                }
+            }
         }
 
         // Check if the pulse duration has elapsed
@@ -112,42 +131,24 @@ public class ThrustersPulses2 : MonoBehaviour
         }
     }
 
-    void ListenForThrusters()
+    private IEnumerator SetRandomThrusterMagnitudes()
     {
         while (true)
         {
-            // Wait for a client to connect
-            thrusterClient = thrusterListener.AcceptTcpClient();
-
-            // Create a new thread to continuously read data from the client
-            Thread readDataThread = new Thread(ReadDataFromClient);
-            readDataThread.Start();
-        }
-    }
-
-    void ReadDataFromClient()
-    {
-        while (true)
-        {
-            // Read the data from the client
-            NetworkStream stream = thrusterClient.GetStream();
-            byte[] data = new byte[1024];
-            int bytesRead = stream.Read(data, 0, data.Length);
-
-            // Parse the data into the thrusterMagnitudes array
-            string dataString = Encoding.UTF8.GetString(data, 0, bytesRead);
-            string[] thrusterData = dataString.Split(';');
-            for (int i = 0; i < thrusterData.Length; i++)
+            // Set random magnitudes for each thruster
+            for (int i = 0; i < thrusterMagnitudes.Length; i++)
             {
-                if (!float.TryParse(thrusterData[i], out thrusterMagnitudes[i]))
-                {
-                    Debug.LogError("Invalid data received from client: " + thrusterData[i]);
-                    continue;
-                }
+                thrusterMagnitudes[i] = possibleMagnitudes[UnityEngine.Random.Range(0, possibleMagnitudes.Length)];
             }
 
-            // Print a message to the console indicating that data has been received
-            Debug.Log("Data received from client: " + dataString);
+            // Print a message to the console indicating that new magnitudes have been set
+            Debug.Log("New thruster magnitudes set: " + string.Join(", ", thrusterMagnitudes));
+
+            // Update the pulse start time
+            pulseStartTime = Time.time;
+
+            // Wait for the next pulse duration
+            yield return new WaitForSeconds(pulseDuration);
         }
     }
 }
